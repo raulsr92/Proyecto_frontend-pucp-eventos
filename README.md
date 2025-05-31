@@ -14,12 +14,12 @@ Proyecto de eventos en la ciudad de Lima
 
 |Descripción             | Página a elaborar  |
 |----------------|-------------------------------|
-|1-Barrientos Cristhian |Inicio Sesión      |
+|1-Barrientos Cristhian |Inicio Sesión  |
 |2-Cusimayta Alex | Registro de Nuevo Usuario |
-|3-Loyola Gonzalo | Perfil  
+|3-Loyola Gonzalo | Perfil de usuario  
 |4-Nolasco Fredy| Home (lista de eventos)|
-|5-Ramirez Diego - Carrito| Carrito de Eventos  |
-|6-Sanchez Rodriguez Raul| Checkout |
+|5-Ramirez Diego | Carrito de Eventos  |
+|6-Sanchez Rodriguez Raul| Checkout (pago) |
 
 ✅ Filtros escogidos:
 
