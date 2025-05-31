@@ -1,21 +1,24 @@
+# GRUPO 2
 
-Integrantes:
-
-1-Barrientos Cristhian - Inicio Sesión
-2-Cusimayta Alex - Registro de Nuevo Usuario
-3-Loyola Gonzalo
-4-Nolasco Fredy - Home (eventos)
-5-Ramirez Diego
-6-Sanchez Rodriguez Raul - Checkout
+Proyecto de eventos en la ciudad de Lima
 
 
-//Páginas
-Perfil
-Pagina del evento individual
-Seleccion de asientos
-Carrito de Compras (?)
+✅ Integrantes y división del trabajo:
 
-//Filtros
-1- Categoría
-2- Lugar
-3- 
+|Descripción             | Página a elaborar  |
+|----------------|-------------------------------|
+|1-Barrientos Cristhian |Inicio Sesión      |
+|2-Cusimayta Alex | Registro de Nuevo Usuario |
+|3-Loyola Gonzalo | Perfil  
+|4-Nolasco Fredy| Home (lista de eventos)|
+|5-Ramirez Diego - Carrito| Carrito de Eventos  |
+|Sanchez Rodriguez Raul| Checkout |
+
+✅ Filtros escogidos:
+
+
+|N° | Filtro  |
+|----------------|-------------------------------|
+|1 |Filtro por categoría      |
+|2 | Filtro por Lugaar |
+|3 | Filtro por fecha 
