@@ -7,117 +7,136 @@
   <meta name="description" content="Compra entradas para conciertos, teatro, deportes y más en [Nombre de la pagina]. Encuentra tus eventos favoritos y asegura tu lugar.">
   <meta name="keywords" content="[Nombre de la pagina], entradas, eventos, conciertos, teatro, deportes, espectáculos, Perú">
   <meta name="author" content="[Nombre de la pagina]">
+  <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <a href="home.html">Teleticket</a>
+  <main class="grid-container">
+    <header class="header item" >
+      <div class="top-bar">
+        <div class="logo">
+          <a href="home.html">Teleticket</a>
+        </div>
+        <nav class="main-nav">
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="#">Mis entradas</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Iniciar sesión</a></li>
+            <li><a href="#">Registrar</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="main-nav">
-          <li><a href="#">Eventos</a></li>
-          <li><a href="#">Categorías</a></li>
-          <li><a href="#">Mis entradas</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Iniciar sesión</a></li>
-          <li><a href="#">Registrar</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!--Cuadro que se abrirá al hacer click en categorías-->
-  <div class="categorias-ventana" style="background-color: azure;">
-    <form action="">
-      <p>Eventos Deporitivos</p>
-      <p>Conciertos</p>
-      <p>Fiestas</p>
-      <p>Comidas y Bebidas</p>
-      <p>Niños</p>
-      <button type="submit">Aplicar</button>
-    </form>
-   </div>
-
-  <main>
-    <!-- Banner principal -->
-    <section>
-        <h1>¡Compra tus entradas para los mejores eventos!</h1>
-        <form class="search-form">
-          <input type="text" placeholder="Buscar evento, artista o lugar...">
-          <input type="submit" value="Buscar">
-        </form>
-    </section>
-
-    <!-- Filtros rápidos -->
-    <section>
-      <h2>Filtrar por:</h2>
-      <div class="filters">
-        <form class="filters" id="filter-form">
-            <label><input type="checkbox" name="filtro" value="hoy"> Hoy</label>
-            <label><input type="checkbox" name="filtro" value="semana"> Esta semana</label>
-            <label><input type="checkbox" name="filtro" value="conciertos"> Conciertos</label>
-            <label><input type="checkbox" name="filtro" value="teatro"> Teatro</label>
-            <label><input type="checkbox" name="filtro" value="deportes"> Deportes</label>
-            <label><input type="checkbox" name="filtro" value="familia"> Familia</label>
-            <label><input type="checkbox" name="filtro" value="todo"> Ver todo</label>
+    <section class="menu item" >
+      <!--Cuadro que se abrirá al hacer click en categorías-->
+      <div class="categorias-ventana" >
+        <form action="">
+          <p>Eventos Deporitivos</p>
+          <p>Conciertos</p>
+          <p>Fiestas</p>
+          <p>Comidas y Bebidas</p>
+          <p>Niños</p>
+          <button type="submit">Aplicar</button>
         </form>
       </div>
     </section>
 
-    <!-- Eventos destacados -->
-    <section>
-      <h2>Eventos Destacados</h2>
-      <div>
-        <!-- Repetiremos este bloque por cada evento -->
-        <article class="event-card">
-          <img src="img/evento1.jpg" alt="Evento 1">
-          <div class="event-info">
-            <h3>Evento 1</h3>
-            <p>Lugar - Fecha</p>
-            <a href="#">Agregar al carrito</a>
-          </div>
-        </article>
-        <!-- Fin evento -->
-        <article class="event-card">
-          <img src="img/evento2.jpg" alt="Evento 2">
-          <div class="event-info">
-            <h3>Evento 2</h3>
-            <p>Lugar - Fecha</p>
-            <a href="#">Agregar al carrito</a>
-          </div>
-        </article>
+    <section class="principal item"  >
+      <!-- Banner principal -->
+      <section>
+          <h1>¡Compra tus entradas para los mejores eventos!</h1>
+          <form class="search-form">
+            <input type="text" placeholder="Buscar evento, artista o lugar...">
+            <input type="submit" value="Buscar">
+          </form>
+      </section>
 
-        <article class="event-card">
-          <img src="img/evento3.jpg" alt="Evento 3">
-          <div class="event-info">
-            <h3>Evento 3</h3>
-            <p>Lugar - Fecha</p>
-            <a href="#">Agregar al carrito</a>
-          </div>
-        </article>
+      <!-- Filtros rápidos -->
+      <section>
+        <h2>Filtrar por:</h2>
+        <div class="filters">
+          <form class="filters" id="filter-form">
+              <label><input type="checkbox" name="filtro" value="hoy"> Hoy</label>
+              <label><input type="checkbox" name="filtro" value="semana"> Esta semana</label>
+              <label><input type="checkbox" name="filtro" value="conciertos"> Conciertos</label>
+              <label><input type="checkbox" name="filtro" value="teatro"> Teatro</label>
+              <label><input type="checkbox" name="filtro" value="deportes"> Deportes</label>
+              <label><input type="checkbox" name="filtro" value="familia"> Familia</label>
+              <label><input type="checkbox" name="filtro" value="todo"> Ver todo</label>
+          </form>
+        </div>
+      </section>
 
-        <article class="event-card">
-          <img src="img/evento4.jpg" alt="Evento 4">
-          <div class="event-info">
-            <h3>Evento 4</h3>
-            <p>Lugar - Fecha</p>
-            <a href="#">Agregar al carrito</a>
-          </div>
-        </article>
-      </div>
+      <!-- Eventos destacados -->
+      <section>
+        <h2>Eventos Destacados</h2>
+        <div>
+          <!-- Repetiremos este bloque por cada evento -->
+          <article class="event-card">
+            <img src="img/evento1.jpg" alt="Evento 1">
+            <div class="event-info">
+              <h3>Evento 1</h3>
+              <p>Lugar - Fecha</p>
+              <a href="#">Agregar al carrito</a>
+            </div>
+          </article>
+          <!-- Fin evento -->
+          <article class="event-card">
+            <img src="img/evento2.jpg" alt="Evento 2">
+            <div class="event-info">
+              <h3>Evento 2</h3>
+              <p>Lugar - Fecha</p>
+              <a href="#">Agregar al carrito</a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="img/evento3.jpg" alt="Evento 3">
+            <div class="event-info">
+              <h3>Evento 3</h3>
+              <p>Lugar - Fecha</p>
+              <a href="#">Agregar al carrito</a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="img/evento4.jpg" alt="Evento 4">
+            <div class="event-info">
+              <h3>Evento 4</h3>
+              <p>Lugar - Fecha</p>
+              <a href="#">Agregar al carrito</a>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
+
+    <section class="contenido-adicional item" >
+      <h4>
+        Contenido adicional
+      </h4>
+    </section>
+
+    <footer class="footer item" >
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Preguntas frecuentes</a>
+          <a href="#">Contáctanos</a>
+        </div>
+        <p>&copy; 2025 [Nombre de la pagina]. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Preguntas frecuentes</a>
-        <a href="#">Contáctanos</a>
-      </div>
-      <p>&copy; 2025 [Nombre de la pagina]. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+
+
+
+
+
+
 </body>
 </html>

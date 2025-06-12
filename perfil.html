@@ -2,69 +2,113 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Perfil</title>
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-    <header>
-        <h1>Perfil de Usuario</h1>
-    </header>
+    <main class="grid-container">
+        <header class="header item" >
+        <div class="top-bar">
+            <div class="logo">
+            <a href="home.html">Teleticket</a>
+            </div>
+            <nav class="main-nav">
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Mis entradas</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registrar</a></li>
+            </ul>
+            </nav>
+        </div>
+        </header>
 
-    <main>
-        <section>
-
-            <form>
-
-                <section>
-                    <h3>Datos Personales</h3>
-
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" id="nombre" name="nombre" required><br><br>
-
-                    <label for="apellido">Apellido:</label><br>
-                    <input type="text" id="apellido" name="apellido" required><br><br>
-
-                    <label for="correo">Correo Electrónico:</label><br>
-                    <input type="email" id="correo" name="correo" required><br><br>
-
-                    <label for="telefono">Teléfono:</label><br>
-                    <input type="tel" id="telefono" name="telefono"><br><br>
-                </section>
-
-                <section>
-                    <h3>Distrito de residencia</h3>
-                    <!-- aca podemos poner los distritos con ubigeo en el value despues -->
-                    <label for="Distrito">Distrito:</label><br>
-                    <select id="distrito" name="distrito">
-                        <option value="1">San Miguel</option>
-                        <option value="2">Miraflores</option>
-                        <option value="3">San Isidro</option>
-                        <option value="4">Magdalena</option>
-                        <option value="5">Otros</option>
-                    </select><br><br>
-                </section>
-
-                <section>
-                    <h3>Cambiar Contraseña</h3>
-
-                    <label for="contrasena_actual">Contraseña Actual:</label><br>
-                    <input type="password" id="contrasena_actual" name="contrasena_actual" required><br><br>
-
-                    <label for="nueva_contrasena">Nueva Contraseña:</label><br>
-                    <input type="password" id="nueva_contrasena" name="nueva_contrasena" required><br><br>
-
-                    <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label><br>
-                    <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required><br><br>
-                </section>
-
-                <button type="submit">Guardar Cambios</button>
-
-            </form>
+        <section class="menu item">
+            <h4>
+                Menu
+            </h4>
         </section>
+
+        <section class="principal item">
+            <main>
+                <section>
+
+                    <form>
+
+                        <section>
+                            <h3>Datos Personales</h3>
+
+                            <label for="nombre">Nombre:</label><br>
+                            <input type="text" id="nombre" name="nombre" required><br><br>
+
+                            <label for="apellido">Apellido:</label><br>
+                            <input type="text" id="apellido" name="apellido" required><br><br>
+
+                            <label for="correo">Correo Electrónico:</label><br>
+                            <input type="email" id="correo" name="correo" required><br><br>
+
+                            <label for="telefono">Teléfono:</label><br>
+                            <input type="tel" id="telefono" name="telefono"><br><br>
+                        </section>
+
+                        <section>
+                            <h3>Distrito de residencia</h3>
+                            <!-- aca podemos poner los distritos con ubigeo en el value despues -->
+                            <label for="Distrito">Distrito:</label><br>
+                            <select id="distrito" name="distrito">
+                                <option value="1">San Miguel</option>
+                                <option value="2">Miraflores</option>
+                                <option value="3">San Isidro</option>
+                                <option value="4">Magdalena</option>
+                                <option value="5">Otros</option>
+                            </select><br><br>
+                        </section>
+
+                        <section>
+                            <h3>Cambiar Contraseña</h3>
+
+                            <label for="contrasena_actual">Contraseña Actual:</label><br>
+                            <input type="password" id="contrasena_actual" name="contrasena_actual" required><br><br>
+
+                            <label for="nueva_contrasena">Nueva Contraseña:</label><br>
+                            <input type="password" id="nueva_contrasena" name="nueva_contrasena" required><br><br>
+
+                            <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label><br>
+                            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required><br><br>
+                        </section>
+
+                        <button type="submit">Guardar Cambios</button>
+
+                    </form>
+                </section>
+            </main>
+        </section>
+
+        <section class="contenido-adicional item">
+                <h4>
+                    Contenido adicional
+                </h4>
+        </section>
+
+
+
+
+    <footer class="footer item" >
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Preguntas frecuentes</a>
+          <a href="#">Contáctanos</a>
+        </div>
+        <p>&copy; 2025 [Nombre de la pagina]. Todos los derechos reservados.</p>
+      </div>
+    </footer>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Ecommerce grupo 2. Todos los derechos reservados.</p>
-    </footer>
 
 </body>
 </html>

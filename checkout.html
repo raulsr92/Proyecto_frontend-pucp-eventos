@@ -1,165 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilos.css">
 
-<header style="background-color: black;color: white;" >
-    <div>
-        Logo
-        <img src="logo" alt="">
-    </div>
-    <div>
-        <i>Icon User</i>
-    </div>
-</header>
-<aside>
-    <div>
-        Imagen evento miniatura
-        <img src="" alt="">
-    </div>
-    <div>
-        <h3>Perú vs Ecuador | Clasificatorias Copa Mundial 2026</h3>
-        <div>
-            <p><i>Icon</i> Martes 10 de Junio</p>
-            <p> <i>Icon</i> 08:30 p.m</p>
-        </div>
-    </div>
-    <div>
-        <p>00:15:00</p>
-        <p>Tiempo restante</p>
-    </div>
-</aside>
-<section class="participantes-section" style="background-color: antiquewhite;padding: 10px 10px;">
-    <p>Paso 1 de 3</p>
-    <h3>Completa los datos de los participantes</h3>
-    <div>
-        <div>
-            <h4>Asistente 1</h4>
-            <i>icon 1</i>
-        </div>
-        <p>Tipo de entradas</p>
-        <p>Sector: Occidente Central</p>
-        <span>Completar mis datos</span>
-        <form action="">
-            <label for="pais">País*</label>
-            <select name="pets" id="pais">
-                <option value="peru">Peru</option>
-                <option value="ecuador">Ecuador</option>
-                <option value="colombia">Colombia</option>
-            </select>
-
-            <label for="doc">Tipo de Documento*</label>
-            <select name="pets" id="doc">
-                <option value="peru">DNI</option>
-                <option value="ecuador">Pasaporte</option>
-                <option value="colombia">Carnet de Extranjería</option>
-            </select>
-
-            <label for="numero-doc">N° de documento*</label>
-            <div>
-                <input type="text" id="numero-doc">
-                <i>lupa</i>
+</head>
+<body>  
+    <main class="grid-container">
+        <header class="header item" >
+        <div class="top-bar">
+            <div class="logo">
+            <a href="home.html">Teleticket</a>
             </div>
-
-            <label for="nombre">Nombre*</label>
-            <input type="text" placeholder="Nombres" id="nombre">
-
-            <label for="apellidos">Apellido*</label>
-            <input type="text" placeholder="Apellidos" id="apellidos">
-
-            <button type="submit"> Guardar</button>
-        </form>
-    </div>
-</section>
-
-<section class="asientos-section" style="background-color: rgb(179, 244, 244);padding: 10px 10px">
-    <p>Paso 2 de 3</p>
-    <h3>Nombre de Evento </h3>
-    <div>
-        <span> Martes 10 de Junio</span>
-        <span> 08:30 p.m</span>
-    </div>
-    <div>
-        <i>icono</i>
-        <p>Lugar  Estadio Nacional</p>
-    </div>
-
-    <div>
-        <h5>Mi compra</h5>
-        <span>cantidad</span>
-    </div>
-
-    <div>
-        <div>
-            <p>1 x Oriente Central</p>
-            <p>Zona: I- Fila: 23 - Asiento 9</p> 
+            <nav class="main-nav">
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Mis entradas</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registrar</a></li>
+            </ul>
+            </nav>
         </div>
-        <p>
-            S/ 400.00 PEN
-        </p>
-    </div>
+        </header>
 
-    <div>
-        <p>Total</p>
-        <p>S/ 400.00 PEN</p>
-    </div>
+        <section class="menu item">
+            <h4>
+                Menu
+            </h4>
+        </section>
 
-    <a href="">Continuar</a>
-</section>
+        <section class="principal item">
+            <section class="participantes-section" >
+                <p>Paso 1 de 3</p>
+                <h3>Completa los datos de los participantes</h3>
+                <div>
+                    <div>
+                        <h4>Asistente 1</h4>
+                        <i>icon 1</i>
+                    </div>
+                    <p>Tipo de entradas</p>
+                    <p>Sector: Occidente Central</p>
+                    <span>Completar mis datos</span>
+                    <form action="">
+                        <label for="pais">País*</label>
+                        <select name="pets" id="pais">
+                            <option value="peru">Peru</option>
+                            <option value="ecuador">Ecuador</option>
+                            <option value="colombia">Colombia</option>
+                        </select>
 
-<section class="metodoPago-section" style="background-color:rgb(218, 191, 244);padding: 10px 10px">
-    <p>Paso 3 de 3</p>
-    <h4>Elige tu método de pago</h4>
-    <form action="">
-        <div>
-            <input type="radio" id="bcp-metodo" name="metodo-pago">
-            <label for="bcp-metodo">JoinnusPay vía BCP</label>
+                        <label for="doc">Tipo de Documento*</label>
+                        <select name="pets" id="doc">
+                            <option value="peru">DNI</option>
+                            <option value="ecuador">Pasaporte</option>
+                            <option value="colombia">Carnet de Extranjería</option>
+                        </select>
+
+                        <label for="numero-doc">N° de documento*</label>
+                        <div>
+                            <input type="text" id="numero-doc">
+                            <i>lupa</i>
+                        </div>
+
+                        <label for="nombre">Nombre*</label>
+                        <input type="text" placeholder="Nombres" id="nombre">
+
+                        <label for="apellidos">Apellido*</label>
+                        <input type="text" placeholder="Apellidos" id="apellidos">
+
+                        <button type="submit"> Guardar</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="asientos-section" >
+                <p>Paso 2 de 3</p>
+                <h3>Nombre de Evento </h3>
+                <div>
+                    <span> Martes 10 de Junio</span>
+                    <span> 08:30 p.m</span>
+                </div>
+                <div>
+                    <i>icono</i>
+                    <p>Lugar  Estadio Nacional</p>
+                </div>
+
+                <div>
+                    <h5>Mi compra</h5>
+                    <span>cantidad</span>
+                </div>
+
+                <div>
+                    <div>
+                        <p>1 x Oriente Central</p>
+                        <p>Zona: I- Fila: 23 - Asiento 9</p> 
+                    </div>
+                    <p>
+                        S/ 400.00 PEN
+                    </p>
+                </div>
+
+                <div>
+                    <p>Total</p>
+                    <p>S/ 400.00 PEN</p>
+                </div>
+
+                <a href="">Continuar</a>
+            </section>
+
+            <section class="metodoPago-section" >
+                <p>Paso 3 de 3</p>
+                <h4>Elige tu método de pago</h4>
+                <form action="">
+                    <div>
+                        <input type="radio" id="bcp-metodo" name="metodo-pago">
+                        <label for="bcp-metodo">JoinnusPay vía BCP</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="billetera-metodo" name="metodo-pago">
+                        <label for="billetera-metodo">Tarjetas, Yape y otras billeteras vía IZIPAY</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="millas-metodo" name="metodo-pago">
+                        <label for="millas-metodo">Millas Benefit</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="efectivo-metodo" name="metodo-pago">
+                        <label for="efectivo-metodo">Pago en efectivo</label>
+                    </div>
+
+                    <a href="">Pagar</a>
+
+                </form>
+            </section>
+
+
+            <section class="pago-section" >
+                <p>Número de pedido</p>
+                <p>92938447</p>
+                <form action="">
+                    <div>
+                        <i>Icono tarjeta</i>
+                        <p>Tarjeta</p>
+                    </div>
+                    <div>
+                        <i>Icono QR</i>
+                        <p>QR</p>
+                    </div>
+                    <div>
+                        <i>Icono Yape</i>
+                        <p>Yape</p>
+                    </div>
+                </form>
+                <span>Recuerde activar tus compras por internet</span>
+                <form action="">
+                    <input type="text" name="" placeholder="Número de tarjeta" id="">
+                    <input type="text" placeholder="Caducidad">
+                    <input type="text" placeholder="CVV">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" placeholder="Nombres" id="nombre">
+
+                    <label for="apellidos">Apellido</label>
+                    <input type="text" placeholder="Apellidos" id="apellidos">
+                    <label for="apellidos">Correo*</label>
+                    <input type="text" placeholder="Correo" id="apellidos">
+                    <a href="">Pagar S/688.56</a>
+                    <span>POWERED BY <i>Izipay icon</i></span>
+                </form>
+            </section>
+        </section>
+
+        <section class="contenido-adicional item">
+            <aside>
+                <div>
+                    Imagen evento miniatura
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <h3>Perú vs Ecuador | Clasificatorias Copa Mundial 2026</h3>
+                    <div>
+                        <p><i>Icon</i> Martes 10 de Junio</p>
+                        <p> <i>Icon</i> 08:30 p.m</p>
+                    </div>
+                </div>
+                <div>
+                    <p>00:15:00</p>
+                    <p>Tiempo restante</p>
+                </div>
+            </aside>
+        </section>
+
+
+
+
+
+        <footer class="footer item" >
+        <div class="footer-content">
+            <div class="footer-links">
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Contáctanos</a>
+            </div>
+            <p>&copy; 2025 [Nombre de la pagina]. Todos los derechos reservados.</p>
         </div>
-        <div>
-            <input type="radio" id="billetera-metodo" name="metodo-pago">
-            <label for="billetera-metodo">Tarjetas, Yape y otras billeteras vía IZIPAY</label>
-        </div>
-        <div>
-            <input type="radio" id="millas-metodo" name="metodo-pago">
-            <label for="millas-metodo">Millas Benefit</label>
-        </div>
-        <div>
-            <input type="radio" id="efectivo-metodo" name="metodo-pago">
-            <label for="efectivo-metodo">Pago en efectivo</label>
-        </div>
-
-        <a href="">Pagar</a>
-
-    </form>
-</section>
+        </footer>
+    </main>
 
 
-<section class="pago-section" style="background-color:rgb(235, 184, 166);padding: 10px 10px">
-    <p>Número de pedido</p>
-    <p>92938447</p>
-    <form action="">
-        <div>
-            <i>Icono tarjeta</i>
-            <p>Tarjeta</p>
-        </div>
-        <div>
-            <i>Icono QR</i>
-            <p>QR</p>
-        </div>
-        <div>
-            <i>Icono Yape</i>
-            <p>Yape</p>
-        </div>
-    </form>
-    <span>Recuerde activar tus compras por internet</span>
-    <form action="">
-        <input type="text" name="" placeholder="Número de tarjeta" id="">
-        <input type="text" placeholder="Caducidad">
-        <input type="text" placeholder="CVV">
-        <label for="nombre">Nombre</label>
-        <input type="text" placeholder="Nombres" id="nombre">
-
-        <label for="apellidos">Apellido</label>
-        <input type="text" placeholder="Apellidos" id="apellidos">
-        <label for="apellidos">Correo*</label>
-        <input type="text" placeholder="Correo" id="apellidos">
-        <a href="">Pagar S/688.56</a>
-        <span>POWERED BY <i>Izipay icon</i></span>
-    </form>
-</section>
+</body>
+</html>

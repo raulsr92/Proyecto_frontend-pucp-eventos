@@ -2,66 +2,120 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="./estilos.css">
+
 </head>
 <body>
-  <h1>Carrito de Compras</h1>
 
-  <h2>Eventos en tu carrito:</h2>
+    <main class="grid-container">
+        <header class="header item" >
+            <div class="top-bar">
+              <div class="logo">
+                <a href="home.html">Teleticket</a>
+              </div>
+              <nav class="main-nav">
+                  <li><a href="#">Eventos</a></li>
+                  <li><a href="#">Categorías</a></li>
+                  <li><a href="#">Mis entradas</a></li>
+                  <li><a href="#">Contacto</a></li>
+                  <li><a href="#">Iniciar sesión</a></li>
+                  <li><a href="#">Registrar</a></li>
+                </ul>
+              </nav>
+            </div>
+        </header>
 
-  <ul>
-    <li>
-      <strong>Concierto</strong><br>
-      Artista: Beyoncé<br>
-      Fecha: 15 de junio de 2025<br>
-      Local: Estadio Nacional<br>
-      <button>-</button>
-      Cantidad: 2
-      <button>+</button><br>
-      Precio unitario: S/600.00<br>
-      Total: S/1200.00<br>
-      <button>Eliminar</button>
-    </li>
-    <br>
-    <li>
-      <strong>Obra de Teatro</strong><br>
-      Artista: Yvonne Frayssinet<br>
-      Fecha: 22 de junio de 2025<br>
-      Local: Gran Teatro Nacional del Perú<br>
-      <button>-</button>
-      Cantidad: 3
-      <button>+</button><br>
-      Precio unitario: S/180.00<br>
-      Total: S/540.00<br>
-      <button>Eliminar</button>
-    </li>
-    <br>
-    <li>
-      <strong>Feria de Perfumes</strong><br>
-      Anfitrión: One Marie<br>
-      Fecha: 23 de agosto de 2025<br>
-      Local: One Marie Shop<br>
-      <button>-</button>
-      Cantidad: 2
-      <button>+</button><br>
-      Precio unitario: S/80.00<br>
-      Total: S/160.00<br>
-      <button>Eliminar</button>
-    </li>
-  </ul>
+        <section class="menu item">
+            <h4>
+              Menu
+            </h4>
+        </section>
 
-  <div style="
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 20px;
-    width: fit-content;
-    ">
-    <p><strong>Cantidad de Entradas: 7</strong></p>
-    <p><strong>Total a pagar: S/1900.00</strong></p>
-  </div>
+        <section class="principal item">
+            <h1>Carrito de Compras</h1>
 
-  <p><a href="pagina-de-eventos.html">Seguir comprando</a></p>
-  <p><a href="pago.html">Ir a pagar</a></p>
+            <h2>Eventos en tu carrito:</h2>
+
+            <ul>
+              <li>
+                <strong>Concierto</strong><br>
+                Artista: Beyoncé<br>
+                Fecha: 15 de junio de 2025<br>
+                Local: Estadio Nacional<br>
+                <button>-</button>
+                Cantidad: 2
+                <button>+</button><br>
+                Precio unitario: S/600.00<br>
+                Total: S/1200.00<br>
+                <button>Eliminar</button>
+              </li>
+              <br>
+              <li>
+                <strong>Obra de Teatro</strong><br>
+                Artista: Yvonne Frayssinet<br>
+                Fecha: 22 de junio de 2025<br>
+                Local: Gran Teatro Nacional del Perú<br>
+                <button>-</button>
+                Cantidad: 3
+                <button>+</button><br>
+                Precio unitario: S/180.00<br>
+                Total: S/540.00<br>
+                <button>Eliminar</button>
+              </li>
+              <br>
+              <li>
+                <strong>Feria de Perfumes</strong><br>
+                Anfitrión: One Marie<br>
+                Fecha: 23 de agosto de 2025<br>
+                Local: One Marie Shop<br>
+                <button>-</button>
+                Cantidad: 2
+                <button>+</button><br>
+                Precio unitario: S/80.00<br>
+                Total: S/160.00<br>
+                <button>Eliminar</button>
+              </li>
+            </ul>
+
+            <div style="
+              border: 1px solid #ccc;
+              padding: 10px;
+              margin-top: 20px;
+              width: fit-content;
+              ">
+              <p><strong>Cantidad de Entradas: 7</strong></p>
+              <p><strong>Total a pagar: S/1900.00</strong></p>
+            </div>
+
+            <p><a href="pagina-de-eventos.html">Seguir comprando</a></p>
+            <p><a href="pago.html">Ir a pagar</a></p>
+        </section>
+
+        <section class="contenido-adicional item">
+          <h4>
+             Contenido adicional
+          </h4>
+        </section>
+
+
+
+
+        <footer class="footer item" >
+            <div class="footer-content">
+              <div class="footer-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Contáctanos</a>
+              </div>
+              <p>&copy; 2025 [Nombre de la pagina]. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
 
 </body>
 </html>
