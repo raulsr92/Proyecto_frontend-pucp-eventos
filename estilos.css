@@ -8,7 +8,7 @@
 
 :root {
   --main-color: #42A692;
-  --secondary-color:#1A171B
+  --secondary-color:#1A171B;
 }
 
 .grid-container{
@@ -84,4 +84,36 @@
             "footer footer footer"
         ;
     }
+}
+
+/* Estilos de Footer */
+
+
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer{
+    display: grid;
+    grid-template-areas: 
+    "footer1 footer2 footer3 footer4"
+    ;
+    background-color: var(--secondary-color);
+    color: white;
+   
+    padding: 50px 60px ;
+}
+
+.footer-section1{
+    grid-area: footer1 ;
+}
+.footer-section2{
+    grid-area: footer2 ;
+}
+.footer-section3{
+    grid-area: footer3 ;
+}
+.footer-section4{
+    grid-area: footer4 ;
 }
