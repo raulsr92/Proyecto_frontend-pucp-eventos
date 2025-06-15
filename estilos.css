@@ -110,13 +110,13 @@
     background-color: var(--secondary-color);
     color: white;
    
-    padding: 50px 60px ;
+    padding: 70px 60px ;
 }
 
 .footer-section1{
     grid-area: footer1 ;
     align-items: center;
-    row-gap: 8px;
+    row-gap: 12px;
 }
 .footer-section2{
     grid-area: footer2 ;
@@ -135,7 +135,7 @@
 
 footer .footer-section--header{
     color: var(--main-color);
-    font-weight: 600;
+    font-weight: 700;
     padding-bottom: 15px;
 }
 
@@ -188,4 +188,14 @@ footer .footer-section--header{
 
 .icons-media-container a:hover{
     color: var(--variant-color-main);
+}
+
+.footer-section2, .footer-section3, .footer-section4{
+    align-items: start;
+    font-size: 18px;
+    row-gap: 20px;
+}
+
+.footer-section2 a:hover, .footer-section3 a:hover, .footer-section4 a:hover{
+    text-decoration: underline;
 }
