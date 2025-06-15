@@ -14,7 +14,9 @@
   --main-color: #42A692;
   --secondary-color:#1A171B;
   --variant-color-main: #00e5b5;
-  --variant-color-secondary: #312F32
+  --variant-color-secondary: #312F32;
+  --third-color: #258c77;
+
 }
 
 .grid-container{
@@ -113,6 +115,7 @@
 
 .footer-section1{
     grid-area: footer1 ;
+    align-items: center;
 }
 .footer-section2{
     grid-area: footer2 ;
@@ -133,4 +136,22 @@ footer .footer-section--header{
     color: var(--main-color);
     font-weight: 600;
     padding-bottom: 15px;
+}
+
+.btn-footer{
+    padding: 9px 26px;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    border: 0;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+}
+
+.btn-footer:hover{
+ 
+    background-color: var(--third-color);
+
 }
