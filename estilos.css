@@ -16,7 +16,7 @@
   --variant-color-main: #00e5b5;
   --variant-color-secondary: #312F32;
   --third-color: #258c77;
-
+  --icons-color: #888888;
 }
 
 .grid-container{
@@ -33,9 +33,10 @@
 }
 
 .header{
-    background-color: #f5b7b1;
     grid-area: header;
+    background-color: var(--secondary-color);
 }
+
 
 .menu{
     background-color:#a3e4d7;
@@ -65,6 +66,96 @@
     height: auto; 
     text-align: center;
 }
+
+/*Estilos del Header */
+
+.navbar-section1{
+    grid-area: header1;
+}
+
+.navbar-section2{
+    grid-area: header2;
+    position: relative;
+}
+.navbar-section3{
+    grid-area: header3;
+}
+.navbar-section4{
+    grid-area: header4;
+}
+
+.header nav{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* --------- Elemento input de la barra de navegación --------- */
+
+#barra-filtro{
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--variant-color-secondary);
+    color: var(--variant-color-secondary);
+    font-size: 16px;
+}
+
+/* == efecto hover a la barra de busqueda == */
+
+#barra-filtro:hover{
+    background-color: white;
+    outline: 2px solid white;
+}
+
+
+/* == color de placeholder el elemento input == */
+
+input[type="text"]::placeholder{
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* == efecto hover al placeholder de la barra de busqueda == */
+
+#barra-filtro:hover::placeholder{
+    color: var(--icons-color);
+}
+
+/* == efecto focus a la barra de busqueda == */
+
+#barra-filtro:focus{
+    background-color: white;
+    outline: 2px solid white;
+
+}
+
+/* == efecto focus al placeholder de la barra de busqueda == */
+
+#barra-filtro:focus::placeholder{
+    color: var(--icons-color);
+}
+
+
+.icon-1-header, .icon-2-header{
+    position: absolute;
+    color: var(--icons-color);
+}
+
+.icon-1-header{
+    top:10px;
+    left: 15px;
+}
+
+.icon-2-header{
+    top:10px;
+    right: 15px;
+    display: none!important;
+}
+
 
 /* Estilos de Footer */
 
@@ -176,6 +267,8 @@
 
 
 
+/*Pantallas medianas - tablet*/
+
 @media screen and ( min-width: 501px) {
     
     .grid-container{
@@ -207,6 +300,9 @@
 
 }
 
+
+/*Pantallas grandes - tablet*/
+
 @media screen and ( min-width: 801px) {
         
     .grid-container{
@@ -217,6 +313,19 @@
             "menu principal contenido-adicional"
             "footer footer footer"
         ;
+    }
+
+    /*Estilos del Header*/
+
+    .header nav{
+        grid-template-areas: 
+            "header1 header1 header2 header2 header2 header2 header3 header3 header3 header4 header4 header4"
+        ;
+    }
+
+    .navbar-section1{
+        display: flex;
+        justify-content: flex-end;
     }
 
     /* Estilos de Footer */
