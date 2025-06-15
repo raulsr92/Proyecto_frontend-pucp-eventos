@@ -1,14 +1,20 @@
 /*Estilos globales*/
 
+/*Importacion de fuente ROBOTO */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 :root {
   --main-color: #42A692;
   --secondary-color:#1A171B;
+  --variant-color-main: #00e5b5;
+  --variant-color-secondary: #312F32
 }
 
 .grid-container{
@@ -116,4 +122,15 @@
 }
 .footer-section4{
     grid-area: footer4 ;
+}
+
+.footer-section1,.footer-section2,.footer-section3,.footer-section4{
+    display: flex; /*Solo usamos una línea de codigo*/
+    flex-direction: column; /*invertimos la direccion de los elementos a columna*/
+}
+
+footer .footer-section--header{
+    color: var(--main-color);
+    font-weight: 600;
+    padding-bottom: 15px;
 }
