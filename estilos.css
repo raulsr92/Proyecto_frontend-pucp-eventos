@@ -116,6 +116,7 @@
 .footer-section1{
     grid-area: footer1 ;
     align-items: center;
+    row-gap: 8px;
 }
 .footer-section2{
     grid-area: footer2 ;
@@ -151,7 +152,40 @@ footer .footer-section--header{
 }
 
 .btn-footer:hover{
- 
     background-color: var(--third-color);
+}
 
+.icons-media-container{
+    display: flex;
+    column-gap: 15px;
+}
+
+.icons-media-container > div{
+    width: 44px;
+    height: 44px;
+    background-color: var(--main-color) ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-media{
+    font-size: 24px;
+}
+
+.icons-media-container a{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons-media-container > div:hover{
+    background-color: var(--third-color);
+}
+
+.icons-media-container a:hover{
+    color: var(--variant-color-main);
 }
