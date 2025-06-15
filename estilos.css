@@ -113,7 +113,7 @@
         padding-bottom: 15px;
     }
 
-    .btn-footer{
+    .btn-main{
         padding: 9px 26px;
         border-radius: 20px;
         background-color: var(--main-color);
@@ -125,7 +125,7 @@
         letter-spacing: 0.6px;
     }
 
-    .btn-footer:hover{
+    .btn-main:hover{
         background-color: var(--third-color);
     }
 
