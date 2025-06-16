@@ -79,6 +79,12 @@
 }
 .navbar-section3{
     grid-area: header3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 35px;
+    height: 100%;
+    padding-left: 10px;
 }
 .navbar-section4{
     grid-area: header4;
@@ -89,6 +95,7 @@
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     padding: 15px 30px;
+    height: 100%;
 }
 
 /* --------- Elemento input de la barra de navegación --------- */
@@ -156,6 +163,26 @@ input[type="text"]::placeholder{
     display: none!important;
 }
 
+.icon-3-header{
+    color: white;
+    font-size: 22px;
+}
+
+.navbar-section3 a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    row-gap: 5px;
+    height: 100%;
+    padding: 8px;
+}
+
+.navbar-section3 a:hover{
+    border-bottom: 4px solid white;
+}
 
 /* Estilos de Footer */
 
