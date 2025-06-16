@@ -12,20 +12,51 @@
 
     <main class="grid-container">
         <header class="header item" >
-            <div class="top-bar">
-              <div class="logo">
-                <a href="home.html">Teleticket</a>
-              </div>
-              <nav class="main-nav">
-                  <li><a href="#">Eventos</a></li>
-                  <li><a href="#">Categorías</a></li>
-                  <li><a href="#">Mis entradas</a></li>
-                  <li><a href="#">Contacto</a></li>
-                  <li><a href="#">Iniciar sesión</a></li>
-                  <li><a href="#">Registrar</a></li>
-                </ul>
-              </nav>
+        <nav>
+            <div class="navbar-section1">
+            <a href="">
+                <img src="./img/logo1-sin-fondo.png" alt="logo-eventos" style="width: 200px;">
+            </a>
             </div>
+
+            <div class="navbar-section2">
+            <input type="text" id="barra-filtro" placeholder="Encuentra eventos, lugares, organizadores, etc">
+            <i class="fa-solid fa-magnifying-glass icon-1-header"></i>
+            <i class="fa-solid fa-xmark icon-2-header"></i>
+            </div>
+
+            <div class="navbar-section3">
+                <a href="">
+                <i class="fa-solid fa-sack-dollar icon-3-header"></i>
+                Precio
+                </a>
+                
+                <a href="">
+                <i class="fa-solid fa-layer-group icon-3-header"></i>
+                Categorías
+                </a>
+
+                <a href="">
+                <i class="fa-solid fa-location-dot icon-3-header"></i>
+                Ciudad
+                </a>
+
+                <a href="">
+                <i class="fa-solid fa-calendar-days icon-3-header"></i>
+                Fechas
+                </a>
+            </div>
+
+            <div class="navbar-section4">
+                <button class="btn-main" type="button">
+                    Iniciar Sesión
+                </button>
+
+                <button class="btn-secondary" type="button">
+                    Registrarse
+                </button>
+            </div>
+        </nav>
         </header>
 
         <section class="menu item">
@@ -99,10 +130,6 @@
              Contenido adicional
           </h4>
         </section>
-
-
-
-
         <footer class="footer item" >
 
             <section class="footer-section1">
@@ -142,7 +169,7 @@
                     </a>
                 </div>
 
-                <button class="btn-footer" type="button">
+                <button class="btn-main" type="button">
                     Limpiar cookies
                 </button>
             </section>
