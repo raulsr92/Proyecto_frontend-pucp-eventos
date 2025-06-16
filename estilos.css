@@ -39,7 +39,7 @@
 
 
 .menu{
-    background-color:#a3e4d7;
+    background-color:white;
     grid-area: menu;
   
 }
@@ -232,6 +232,18 @@ input[type="text"]::placeholder{
         border: 2px solid var(--third-color);
 }
 
+.btn-terciary{
+        padding: 9px 26px;
+        border-radius: 20px;
+        background-color: var(--variant-color-main);
+        border: 0;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+}
+
 
 /* Estilos de Footer */
 
@@ -325,6 +337,109 @@ input[type="text"]::placeholder{
         text-decoration: underline;
     }
 
+
+/* =========================== Página Checkout ==================================== */
+
+.principal{
+    background-color: white;
+    padding: 30px 20px;
+}
+
+.participantes-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 15px;
+}
+
+.participantes-section > p{
+    align-self: self-start;
+    font-size: 14px;
+}
+
+.participantes-section > h3{
+    text-align: start;
+}
+
+#asistente-info{
+    border: 2px solid var(--variant-color-main);
+    border-radius: 10px;
+    padding: 20px 10px ;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+#asistente-info>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#asistente-info>div>div{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+#asistente-info p:nth-child(2){
+    align-self: start;
+    font-size: 14px;
+}
+
+#asistente-info p:nth-child(3){
+    align-self: start;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#asistente-info >span{
+    align-self: start;
+    font-size: 13px;
+    border: 1px solid var(--icons-color);
+    display: flex;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.asistente-info--formulario{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.asistente-info--formulario div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.asistente-info--formulario div label{
+    font-size: 15px;
+}
+
+.form-input{
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 10px;
+    outline: 0;
+    border: 1px solid var(--icons-color);
+}
+
+.asistente-info--formulario div label{
+    align-self: self-start;
+}
+
+.container-doc-search{
+    position: relative;
+}
+
+.form-icon-lupa{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: var(--variant-color-main);
+}
 
 
 /*Pantallas medianas - tablet*/

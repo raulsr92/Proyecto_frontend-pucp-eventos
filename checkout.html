@@ -67,42 +67,57 @@
             <section class="participantes-section" >
                 <p>Paso 1 de 3</p>
                 <h3>Completa los datos de los participantes</h3>
-                <div>
+                <div id="asistente-info">
                     <div>
-                        <h4>Asistente 1</h4>
-                        <i>icon 1</i>
+                        <div>
+                            <i class="fa-solid fa-circle-user"></i>
+                            <h4>Asistente 1</h4>
+                        </div> 
+                        <i class="fa-solid fa-chevron-up"></i>
                     </div>
                     <p>Tipo de entradas</p>
-                    <p>Sector: Occidente Central</p>
-                    <span>Completar mis datos</span>
-                    <form action="">
-                        <label for="pais">País*</label>
-                        <select name="pets" id="pais">
-                            <option value="peru">Peru</option>
-                            <option value="ecuador">Ecuador</option>
-                            <option value="colombia">Colombia</option>
-                        </select>
-
-                        <label for="doc">Tipo de Documento*</label>
-                        <select name="pets" id="doc">
-                            <option value="peru">DNI</option>
-                            <option value="ecuador">Pasaporte</option>
-                            <option value="colombia">Carnet de Extranjería</option>
-                        </select>
-
-                        <label for="numero-doc">N° de documento*</label>
+                    <p>Sur</p>
+                    <span>Completar con mis datos</span>
+                    <form class="asistente-info--formulario" action="">
                         <div>
-                            <input type="text" id="numero-doc">
-                            <i>lupa</i>
+                            <label for="pais">País*</label>
+                            <select name="pets" id="pais" class="form-input">
+                                <option value="peru">Peru</option>
+                                <option value="ecuador">Ecuador</option>
+                                <option value="colombia">Colombia</option>
+                            </select>
                         </div>
 
-                        <label for="nombre">Nombre*</label>
-                        <input type="text" placeholder="Nombres" id="nombre">
+                        <div>
+                            <label for="doc">Tipo de Documento*</label>
+                            <select name="pets" id="doc" class="form-input">
+                                <option value="peru">DNI</option>
+                                <option value="ecuador">Pasaporte</option>
+                                <option value="colombia">Carnet de Extranjería</option>
+                            </select>
+                        </div>
 
-                        <label for="apellidos">Apellido*</label>
-                        <input type="text" placeholder="Apellidos" id="apellidos">
+                        <div >
+                            <label for="numero-doc">N° de documento*</label>
+                            <div class="container-doc-search">
+                                <input type="text" id="numero-doc" class="form-input">
+                                
+                                <i class="fa-solid fa-magnifying-glass form-icon-lupa"></i>
+                                
+                            </div>
+                        </div>
 
-                        <button type="submit"> Guardar</button>
+                        <div>
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" placeholder="Nombres" id="nombre" class="form-input">
+                        </div>
+
+                        <div>
+                            <label for="apellidos">Apellido*</label>
+                            <input type="text" placeholder="Apellidos" id="apellidos" class="form-input">
+                        </div>
+
+                        <button type="submit" class="btn-terciary"> Guardar</button>
                     </form>
                 </div>
             </section>
