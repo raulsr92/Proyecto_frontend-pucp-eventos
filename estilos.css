@@ -69,6 +69,17 @@
 
 /*Estilos del Header */
 
+.header nav{
+    grid-template-areas: 
+        "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
+        "header2 header2 header2 header2 header2 header2 header2 header2 header2 header2 header2 header2"
+        "header4 header4 header4 header4 header4 header4 header4 header4 header4 header4 header4 header4"
+        "header3 header3 header3 header3 header3 header3 header3 header3 header3 header3 header3 header3"
+    ;
+
+    row-gap: 15px;
+}
+
 .navbar-section1{
     grid-area: header1;
 }
@@ -221,6 +232,7 @@ input[type="text"]::placeholder{
         border: 2px solid var(--third-color);
 }
 
+
 /* Estilos de Footer */
 
     .footer a{
@@ -329,7 +341,17 @@ input[type="text"]::placeholder{
             "footer footer"
         ;
     }
+    /*Estilos de la cabecera*/
 
+    .header nav{
+    grid-template-areas: 
+        "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
+        "header2 header2 header2 header2 header2 header2 header4 header4 header4 header4 header4 header4"
+        "header3 header3 header3 header3 header3 header3 header3 header3 header3 header3 header3 header3"
+    ;
+
+    row-gap: 15px;
+}
     /* Estilos de Footer */
 
     .footer a{
