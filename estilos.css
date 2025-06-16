@@ -442,6 +442,75 @@ input[type="text"]::placeholder{
 }
 
 
+
+
+/*---------------------------REGISTRAR-------------------------------*/
+/*fORMULARIO*/
+.form-registro {
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #fff9c4;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+
+}
+.form-registro h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+.form-registro label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.form-registro input,
+.form-registro select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.form-registro button[type="submit"],
+.form-registro input[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.form-registro button:hover,
+.form-registro input[type="submit"]:hover {
+  background-color: #019172;
+}
+/*Eventos-Item*/
+.tarjetas-evento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.evento {
+  text-align: center;
+}
+.icono-vertical {
+  width: 120px;
+  height: 120px;
+  margin-top: 5px;
+}
+/*-----------------------------------------------------------------*/
+
+
 /*Pantallas medianas - tablet*/
 
 @media screen and ( min-width: 501px) {
