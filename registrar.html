@@ -10,49 +10,11 @@
 
 <body>
     <main class="grid-container">
-        <header class="header item" >
-            <nav>
+        <header class="header2 item" style="background-color: white;">
+            <nav class="navbar-register">
                 <div class="navbar-section1">
-                <a href="home.html">
-                    <img src="./img/logo1-sin-fondo.png" alt="logo-eventos" style="width: 200px;">
-                </a>
-                </div>
-
-                <div class="navbar-section2">
-                <input type="text" id="barra-filtro" placeholder="Encuentra eventos, lugares, organizadores, etc">
-                <i class="fa-solid fa-magnifying-glass icon-1-header"></i>
-                <i class="fa-solid fa-xmark icon-2-header"></i>
-                </div>
-
-                <div class="navbar-section3">
-                    <a href="">
-                    <i class="fa-solid fa-sack-dollar icon-3-header"></i>
-                    Precio
-                    </a>
-                    
-                    <a href="">
-                    <i class="fa-solid fa-layer-group icon-3-header"></i>
-                    Categorías
-                    </a>
-
-                    <a href="">
-                    <i class="fa-solid fa-location-dot icon-3-header"></i>
-                    Ciudad
-                    </a>
-
-                    <a href="">
-                    <i class="fa-solid fa-calendar-days icon-3-header"></i>
-                    Fechas
-                    </a>
-                </div>
-
-                <div class="navbar-section4">
-                    <a class="btn-main" href="login.html">
-                        Iniciar Sesión
-                    </a>
-
-                    <a class="btn-secondary" href="registrar.html" >
-                        Registrarse
+                    <a href="home.html">
+                        <img src="./img/logo3-sin-fondo.png" alt="logo-eventos" style="width: 250px;">
                     </a>
                 </div>
             </nav>
@@ -81,38 +43,55 @@
         </div>
       </section>
 
-      <section class="principal item">
-
-          <h1>Registro de nuevos usuarios</h1>
+      <section class="principal item principal--registro">
+          <a href="./login.html">Volver a iniciar Sesión</a>  
+          <h1>Bienvenido a G2 Eventos</h1>
 
           <!--  FOMURALI0 -->
           <form class="form-registro" >
-            <label for="nombre">Nombre:</label><br>
-            <input type="text"  ><br><br>
-            <label for="apellido">Apellido:</label><br>
-            <input type="text"><br><br>
+            <div class="form-info">
+                <input id="nombre-input" class="register-input" type="text" placeholder="Nombre" >
 
-            <label for="correo">Correo electrónico:</label><br>
-            <input type="email"><br><br>
+                <input id="apellido-input" type="text" class="register-input" placeholder="Apellidos">
 
-            <label for="telefono">Teléfono:</label><br>
-            <input type="text"><br><br>
+                <input id="correo-input" type="email" class="register-input" placeholder="Correo Electónico">
 
-            <label for="dni">DNI:</label><br>
-            <input type="text"><br><br>
-            <!---->
-            <!-- -->
-            <label for="sexo">Sexo:</label><br>
-            <select id="sexo" name="sexo">
-              <option value="seleciconarr">Seleccionar</option>
-              <option value="masculino">Masculino</option>
-              <option value="femnino">Femenino</option>
-            </select><br><br>
+                <input id="contra-input" type="password" class="register-input" placeholder="Contraseña">
 
-            <label for="contrasena">Contraseña:</label><br>
-            <input type="password"><br><br>
+                <select id="pais-input" name="pais">
+                </select>
 
-            <input type="submit" value="Registrarse">
+
+                <select id="sexo-input" name="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femnino">Femenino</option>
+                </select>
+            </div>
+
+
+            <!--Elementos check-->
+
+            <div class="form-checks">
+                <div>
+                    <input type="checkbox" id="terminos-condiciones" name="terminos" />
+                    <label for="terminos-condiciones">Hé leído y acepto los <a href=""> Términos y Condiciones</a></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="trat-datos" name="datos" />
+                    <label for="trat-datos">¿Usted ha leído y acepta los términos y condiciones para el tratamiento de sus datos personales contenidos en la <a href=""> Política de Privacidad Web</a> ? </label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="info-eventos" name="informacon" />
+                    <label for="info-eventos">¿Usted desea qué <span> G2 EVENTOS</span> envíe información sobre eventos y/o promociones que ofrece?
+                    </label>
+                </div>
+            </div>
+
+
+
+            <input class="btn-main" type="submit" value="Registrarse">
           </form>        
       </section>
 

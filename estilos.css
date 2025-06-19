@@ -1,4 +1,4 @@
-/*Estilos globales*/
+/*===================================================================== Estilos globales*/
 
 /*Importacion de fuente ROBOTO */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -17,6 +17,7 @@
   --variant-color-secondary: #312F32;
   --third-color: #258c77;
   --icons-color: #888888;
+  --input-background1: #f1f6f5;
 }
 
 .grid-container{
@@ -67,7 +68,7 @@
     text-align: center;
 }
 
-/*Estilos del Header */
+/*============================================================================ Estilos del Header ==============*/
 
 .header nav{
     grid-template-areas: 
@@ -199,6 +200,19 @@ input[type="text"]::placeholder{
     border-bottom: 4px solid white;
 }
 
+/*============================================================================ Estilos del Header (Pagina registro) ==============*/
+
+.navbar-register{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header2{
+    padding: 20px 0;
+}
+
+
 /* =========================== Mis Botones ==================================== */
 .btn-main{
         padding: 9px 26px;
@@ -247,8 +261,47 @@ input[type="text"]::placeholder{
         letter-spacing: 0.6px;
 }
 
+/* =========================== Cajas de Formulario ==================================== */
 
-/* Estilos de Footer */
+input[type="text"], input[type="email"],input[type="password"]{
+    border: 0;
+    padding: 10px 15px 10px 10px;
+    border-radius: 3px;
+    transition: box-shadow 0.2s ease;
+}
+
+select{
+    border: 0;
+    padding: 10px 15px 10px 10px;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus{
+    background-color: white;
+    outline: 1px solid var(--main-color);
+    box-shadow:0px 0px 0px 4px rgba(0, 150, 136, 0.2);
+}
+
+input[type="email"]:focus{
+    background-color: white;
+    outline: 1px solid var(--main-color);
+    box-shadow:0px 0px 0px 4px rgba(0, 150, 136, 0.2);
+}
+
+input[type="password"]:focus{
+    background-color: white;
+    outline: 1px solid var(--main-color);
+    box-shadow:0px 0px 0px 4px rgba(0, 150, 136, 0.2);
+}
+
+select:focus{
+    background-color: white;
+    outline: 1px solid var(--main-color);
+    box-shadow:0px 0px 0px 4px rgba(0, 150, 136, 0.2);  
+}
+
+
+/* ==================================== Estilos de Footer ========================= */
 
     .footer a{
         text-decoration: none;
@@ -339,6 +392,7 @@ input[type="text"]::placeholder{
     .footer-section2 a:hover, .footer-section3 a:hover, .footer-section4 a:hover{
         text-decoration: underline;
     }
+
 
 
 /* =========================== Página Checkout ==================================== */
@@ -558,18 +612,110 @@ input[type="text"]::placeholder{
     height: 20px;
 }
 
+/* =========================== Página Registro ==================================== */
 
-/*---------------------------REGISTRAR-------------------------------*/
-/*fORMULARIO*/
-.form-registro {
-  max-width: 400px;
-  margin: 30px auto;
-  background-color: #fff9c4;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 
+.menu{
+   display: none; 
 }
+
+.contenido-adicional{
+   display: none; 
+}
+
+
+.principal--registro{
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+.principal--registro >a{
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 800;
+    text-align: left;
+    text-decoration: none;
+}
+
+.principal--registro >h1{
+    color: var(--secondary-color);
+    font-size: 34px;
+    font-weight: 800;
+    text-align: left;
+}
+
+/* *********************** FORMULARIO*/
+
+#nombre-input::placeholder, #apellido-input::placeholder, #correo-input::placeholder, #contra-input::placeholder {
+    color: var(--icons-color);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#pais-input, #sexo-input{
+    color: var(--icons-color); 
+    font-size: 16px;
+    background-color: var(--input-background1);
+}
+
+.register-input{
+    background-color: var(--input-background1);
+}
+
+
+.form-registro {
+  /*margin: 30px auto;*/
+  /*padding: 25px 30px;*/
+  border-radius: 10px;
+  /*box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);*/
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.form-registro .form-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.form-registro .form-checks{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    text-align: left;
+}
+
+.form-checks{
+    padding: 0 10px;
+}
+
+.form-registro .form-checks div{
+    display: flex;
+    column-gap: 5px;
+    align-items: flex-start;
+}
+
+.form-registro .form-checks div label{
+    font-size: 14px;
+}
+
+.form-registro .form-checks div label a{
+    color: var(--variant-color-main);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-registro .form-checks div label span{
+    color: var(--variant-color-secondary);
+    font-weight: 800;
+}
+
+.form-registro .form-checks div label a:hover{
+    text-decoration: underline;
+}
+
+/*
 .form-registro h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -581,15 +727,17 @@ input[type="text"]::placeholder{
   font-weight: bold;
   color: #333;
 }
+*/
+
+/*
 .form-registro input,
 .form-registro select {
-  width: 100%;
   padding: 8px 12px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
+  border: none;
+  border-radius: 3px;
+}*/
+
+/*
 .form-registro button[type="submit"],
 .form-registro input[type="submit"] {
   margin-top: 20px;
@@ -607,6 +755,8 @@ input[type="text"]::placeholder{
 .form-registro input[type="submit"]:hover {
   background-color: #019172;
 }
+
+*/
 /*Eventos-Item*/
 .tarjetas-evento {
   display: flex;
@@ -742,6 +892,4 @@ input[type="text"]::placeholder{
     .asientos-section{
         grid-area: area2;
     }
-
-
 }
