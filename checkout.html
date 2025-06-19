@@ -58,9 +58,23 @@
         </header>
 
         <section class="menu item">
-            <h4>
-                Menu
-            </h4>
+            <aside>
+                <div>
+                    Imagen evento miniatura
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <h3>Perú vs Ecuador | Clasificatorias Copa Mundial 2026</h3>
+                    <div>
+                        <p><i>Icon</i> Martes 10 de Junio</p>
+                        <p> <i>Icon</i> 08:30 p.m</p>
+                    </div>
+                </div>
+                <div>
+                    <p>00:15:00</p>
+                    <p>Tiempo restante</p>
+                </div>
+            </aside>
         </section>
 
         <section class="principal item">
@@ -102,7 +116,9 @@
                             <div class="container-doc-search">
                                 <input type="text" id="numero-doc" class="form-input">
                                 
-                                <i class="fa-solid fa-magnifying-glass form-icon-lupa"></i>
+                                <a id="form-icon-lupa--container" >
+                                    <i class="fa-solid fa-magnifying-glass form-icon-lupa"></i>
+                                </a>
                                 
                             </div>
                         </div>
@@ -124,40 +140,48 @@
 
             <section class="asientos-section" >
                 <p>Paso 2 de 3</p>
-                <h3>Nombre de Evento </h3>
-                <div>
-                    <span> Martes 10 de Junio</span>
-                    <span> 08:30 p.m</span>
-                </div>
-                <div>
-                    <i>icono</i>
-                    <p>Lugar  Estadio Nacional</p>
-                </div>
-
-                <div>
-                    <h5>Mi compra</h5>
-                    <span>cantidad</span>
-                </div>
-
-                <div>
+                <div id="asistente-precuenta">
+                    <h3>Alianza Lima vs Universitario | Final Ida Femenino</h3>
                     <div>
-                        <p>1 x Oriente Central</p>
-                        <p>Zona: I- Fila: 23 - Asiento 9</p> 
+                        <span> 
+                            <i class="fa-regular fa-calendar-check"></i>
+                            Martes 18 de Junio
+                        </span>
+                        <span> 
+                            <i class="fa-regular fa-clock"></i>
+                            08:30 p.m
+                        </span>
                     </div>
-                    <p>
-                        S/ 400.00 PEN
-                    </p>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p> Estadio Alejandro Villanueva</p>
+                    </div>
+
+                    <div>
+                        <h5>Mi compra</h5>
+                        <span>cantidad</span>
+                    </div>
+
+                    <div>
+                        <div>
+                            <p>1 x Oriente Central</p>
+                            <p>Zona: I- Fila: 23 - Asiento 9</p> 
+                        </div>
+                        <p>
+                            S/ 400.00 PEN
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>Total</p>
+                        <p>S/ 400.00 PEN</p>
+                    </div>
+                    <a href="">Continuar</a>
                 </div>
 
-                <div>
-                    <p>Total</p>
-                    <p>S/ 400.00 PEN</p>
-                </div>
-
-                <a href="">Continuar</a>
             </section>
 
-            <section class="metodoPago-section" >
+            <section class="metodoPago-section" id="asistente-info-mediopago" >
                 <p>Paso 3 de 3</p>
                 <h4>Elige tu método de pago</h4>
                 <form action="">
@@ -184,7 +208,7 @@
             </section>
 
 
-            <section class="pago-section" >
+            <section class="pago-section" id="asistente-datos-mediopago">
                 <p>Número de pedido</p>
                 <p>92938447</p>
                 <form action="">
@@ -220,23 +244,7 @@
         </section>
 
         <section class="contenido-adicional item">
-            <aside>
-                <div>
-                    Imagen evento miniatura
-                    <img src="" alt="">
-                </div>
-                <div>
-                    <h3>Perú vs Ecuador | Clasificatorias Copa Mundial 2026</h3>
-                    <div>
-                        <p><i>Icon</i> Martes 10 de Junio</p>
-                        <p> <i>Icon</i> 08:30 p.m</p>
-                    </div>
-                </div>
-                <div>
-                    <p>00:15:00</p>
-                    <p>Tiempo restante</p>
-                </div>
-            </aside>
+
         </section>
 
         <footer class="footer item" >
@@ -317,5 +325,8 @@
     </main>
     <!--Instalacion de FontAwesome-->
     <script src="https://kit.fontawesome.com/33e3caf9b6.js" crossorigin="anonymous"></script>
+
+    <!--Instalacion de Archivo JS-->
+    <script src="./script.js"></script>
 </body>
 </html>

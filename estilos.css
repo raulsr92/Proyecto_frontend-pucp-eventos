@@ -434,14 +434,101 @@ input[type="text"]::placeholder{
     position: relative;
 }
 
-.form-icon-lupa{
+#form-icon-lupa--container{
     position: absolute;
-    right: 10px;
-    top: 10px;
-    color: var(--variant-color-main);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--variant-color-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+
 }
 
 
+.form-icon-lupa{
+    /*position: absolute;
+    right: 10px;
+    top: 10px;*/
+    color: white;
+}
+*/
+
+.menu aside{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--variant-color-main);
+}
+
+#asistente-precuenta{
+    border: 2px solid var(--variant-color-main);
+    border-radius: 5px;
+    padding: 20px 10px ;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    row-gap: 15px;
+}
+
+#asistente-precuenta h3{
+    text-align: left;
+}
+
+#asistente-precuenta > div:nth-child(2){
+    display: flex;
+    column-gap: 20px;
+    color: var(--variant-color-secondary);
+    font-size: 14px;
+}
+
+#asistente-precuenta > div:nth-child(3){
+    display: flex;
+    column-gap: 10px;
+    color: var(--variant-color-secondary);
+    font-size: 14px;
+}
+
+#asistente-precuenta > div:nth-child(4){
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#asistente-precuenta > div:nth-child(4) h5{
+    font-size: 16px;
+}
+
+
+#asistente-info-mediopago{
+    border: 2px solid var(--variant-color-main);
+    border-radius: 10px;
+    padding: 20px 10px ;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+
+#asistente-datos-mediopago{
+    border: 2px solid var(--variant-color-main);
+    border-radius: 10px;
+    padding: 20px 10px ;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
 
 
 /*---------------------------REGISTRAR-------------------------------*/
@@ -601,5 +688,32 @@ input[type="text"]::placeholder{
 
         padding: 70px 60px ;
     }
+
+
+    .menu aside{
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 0;
+    }
+
+    .principal{
+        display: grid;
+        grid-template-columns: repeat(2 auto);
+        grid-template-areas: 
+        "area1 area2"
+        "area3 area4"
+        ;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .participantes-section{
+        grid-area: area1;
+    }
+    .asientos-section{
+        grid-area: area2;
+    }
+
 
 }
