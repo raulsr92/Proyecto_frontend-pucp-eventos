@@ -151,6 +151,8 @@ if (page.includes("checkout.html")) {
 
     let objUsers = JSON.parse(localStorage.getItem("users")) || [];
 
+    console.log(objUsers)
+
     const btnRegister = document.getElementById("btn-registro-user")
     console.log(btnRegister)
 
@@ -166,6 +168,46 @@ if (page.includes("checkout.html")) {
         let paisUser = document.getElementById("pais-input").value.trim();
         let sexoUser = document.getElementById("sexo-input").value.trim();
 
+
+        //Validación de campos
+
+         if (!nombreUser || !apellidoUser || !docUser || !emailUser || !passwordUser) {
+            alert("Completa todos los campos obligatorios.");
+            
+            return;
+        }
+
+        // Validar si correo ya ha sido registrado
+
+        let usuariosActuales = JSON.parse(localStorage.getItem("users"))|| []
+        
+        let existeCorreo = usuariosActuales.some( (user) =>{
+            return user.correo == emailUser
+         } )
+
+        console.log(existeCorreo);
+
+        if(existeCorreo){
+            alert(`El correo ${emailUser} ya ha sido registrado `);
+
+            document.getElementById("formulario-user").reset()
+            return
+        }
+
+        //Validación de checkbox
+        let checkbox1 = document.getElementById("terminos-condiciones")
+        let checkbox2 = document.getElementById("trat-datos")
+        //let checkbox3 = document.getElementById("info-eventos") /*Este no es obligatorio*/
+
+        if (!checkbox1.checked || !checkbox2.checked ) {
+            alert("Tiene que leer y aceptar los terminos y condiciones y la politica de tratamiento de datos antes de registrarse ")
+            
+            document.getElementById("formulario-user").reset()
+            return
+        }
+
+        //Luego de validaciones, agregar un nuevo objeto al array 
+
         objUsers.push(
             {
                 id: objUsers.length+1,
@@ -179,10 +221,13 @@ if (page.includes("checkout.html")) {
             }
         )
 
+        console.log(objUsers)
+
         localStorage.setItem("users",JSON.stringify(objUsers))  
 
         alert("Usuario registrado exitosamente 🚀")
 
+        document.getElementById("formulario-user").reset()
     })
 }
 
