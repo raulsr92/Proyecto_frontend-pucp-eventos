@@ -18,6 +18,7 @@
   --third-color: #258c77;
   --icons-color: #888888;
   --input-background1: #f1f6f5;
+  --soft:#F1F6F5;
 }
 
 .grid-container{
@@ -628,10 +629,64 @@ select::placeholder{
     height: 20px;
 }
 
+/* =========================== Página Home ==================================== */
+
+.menu-home{
+    padding: 30px 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    background-color: var(--soft);
+}
+
+.menu-home>div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-home>div:nth-child(2) a{
+    color: red;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu-home>div:nth-child(2) a:hover{
+    color: #C70833;
+    text-decoration: underline;
+}
+
+.categorias-ventana{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.categorias-ventana >div input{
+    display: none;
+}
+
+.categorias-ventana >div label{
+    padding: 5px 10px;
+    border: 1px solid var(--icons-color);
+    border-radius: 10px;
+    background-color: white;
+    color: var(--variant-color-secondary);
+    cursor: pointer;
+}
+
+
+.categorias-ventana >div label:hover{
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
 /* =========================== Página Registro ==================================== */
 
 
-.menu{
+.menu-registro{
    display: none; 
 }
 
@@ -851,7 +906,7 @@ select::placeholder{
 
         grid-template-areas: 
             "header header header header"
-            "principal principal contenido-adicional contenido-adicional"
+            "menu principal principal contenido-adicional"
             "footer footer footer footer"
         ;
     }

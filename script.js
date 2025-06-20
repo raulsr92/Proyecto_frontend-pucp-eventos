@@ -229,6 +229,8 @@ if (page.includes("checkout.html")) {
 
         document.getElementById("formulario-user").reset()
     })
+} else if (page.includes("home.html")){
+
 }
 
 
