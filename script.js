@@ -1,135 +1,189 @@
 
-// Arrays de objetos del proyecto
-const objPaises = [
-    {
-        nombre: "Ecuador",
-        capital: "Quito",
-        value: "ecuador",
-    },
-    {
-        nombre: "Colombia",
-        capital: "Bogotá",
-        value: "colonbia",
-    },
-    {
-        nombre: "Argentina",
-        capital: "Buenos Aires",
-        value: "argentina",
-    },
-    {
-        nombre: "Perú",
-        capital: "Lima",
-        value: "peru",
-    },
-    {
-        nombre: "Chile",
-        capital: "Santiago De Chile",
-        value: "chile",
-    }
+const objUsuarios = [
+        {
+            id: 1,
+            dni: "46890373",
+            nombre: "Raul Adolfo",
+            apellidos: "Sanchez Rodriguez"
+        },
+        {
+            id: 2,
+            dni: "74447486",
+            nombre: "Alessandra",
+            apellidos: "Valcarcel Diaz"
+        }
+]
+
+const page = window.location.pathname;
+
+
+if (page.includes("checkout.html")) {
     
-]
 
-const usuarios = [
-    {
-        id: 1,
-        dni: "46890373",
-        nombre: "Raul Adolfo",
-        apellidos: "Sanchez Rodriguez"
-    },
-    {
-        id: 2,
-        dni: "74447486",
-        nombre: "Alessandra",
-        apellidos: "Valcarcel Diaz"
-    }
-]
-
-
-
-// Capturar los combos
-
-const comboPaises = document.getElementById("pais-input");
-console.log(comboPaises)
-
-
-// Funcion para ordernar cualquier arrat de objetos por la propiedad que se desee
-
-let odernarArrayObjs = (array, propertyName) =>{
-
-    const arraySorted = array.sort((a,b)=>{
-
-        const propA = a[propertyName];
-        const propB = b[propertyName];
-
-        if (typeof propA === 'string' && typeof propB === 'string') {
-            return propA.localeCompare(propB);
-        }
-
-
-        if (typeof propA === 'number' && typeof propB === 'number') {
-        return propA - propB;
-        }
-
-        return 0
-
-    } );
-
-    return arraySorted
-}
-
-console.log(odernarArrayObjs(objPaises, "nombre"))
-
-
-odernarArrayObjs(objPaises)
-
-// LLenar los combos
-
-
-objPaises.forEach((pais)=>{
-    comboPaises.innerHTML += 
-    `
-        <option value="${pais.value}">${pais.nombre}</option>   
-    `
-})
-
-// Colocar a Perú primero en el combo
-
-let peruSelected = objPaises.find((pais)=>pais.nombre == "Perú")
-
-console.log(peruSelected)
-
-comboPaises.selectedIndex=objPaises.indexOf(peruSelected)
+    /*================Funcionalidad: Llenar el combo de paises desde JS, más adelante se puede usar una API ================*/
+    /* Explicación: En el formulario de checkout al completar los datos del participante, cuando escribes el nro de documento
+        y hacer click en la lupa, si el usuario está registrado imprime los nombres y apellidos, reduciendo el tiempo de escritura
+        del usuario*/
 
 
 // Detectar usuario en compra (checkout.html)
 
+        const dniUser = document.getElementById("numero-doc")
+        console.log(dniUser)
 
-const dniUser = document.getElementById("numero-doc")
+        const lupaIcon = document.getElementById("form-icon-lupa--container")
+        console.log(lupaIcon)
 
-const lupaIcon = document.getElementById("form-icon-lupa--container")
-console.log(lupaIcon)
+        function autocompletarUsuario(dniAEvaluar) {
+            console.log("Click en lupa")
+            const userSelected = objUsuarios.filter((user)=>user.dni === dniAEvaluar)
+            console.log(userSelected)
+            
+            //Autocompletar
 
-function autocompletarUsuario(dniAEvaluar) {
-    console.log("Click en lupa")
-    const userSelected = usuarios.filter((user)=>user.dni === dniAEvaluar)
-    console.log(userSelected)
-    
+            const cajaNombres = document.getElementById("nombre")
+            console.log(userSelected.nombre)
+            cajaNombres.value = userSelected[0].nombre
+
+            const cajaApellidos = document.getElementById("apellidos")
+            console.log(cajaApellidos)
+
+            cajaApellidos.value = userSelected[0].apellidos
+        }
+
+        lupaIcon.addEventListener("click", ()=>{
+            autocompletarUsuario(dniUser.value); // Llamamos la función con ese valor
+        })
 
 
 
-    //Autocompletar
+} else if (page.includes("registrar.html")) {
 
-    const cajaNombres = document.getElementById("nombre")
-    console.log(userSelected.nombre)
-    cajaNombres.value = userSelected[0].nombre
+    // Arrays de objetos que representan un país
 
-    const cajaApellidos = document.getElementById("apellidos")
-    console.log(cajaApellidos)
+    const objPaises = [
+        {
+            nombre: "Ecuador",
+            capital: "Quito",
+            value: "ecuador",
+        },
+        {
+            nombre: "Colombia",
+            capital: "Bogotá",
+            value: "colonbia",
+        },
+        {
+            nombre: "Argentina",
+            capital: "Buenos Aires",
+            value: "argentina",
+        },
+        {
+            nombre: "Perú",
+            capital: "Lima",
+            value: "peru",
+        },
+        {
+            nombre: "Chile",
+            capital: "Santiago De Chile",
+            value: "chile",
+        }
+        
+    ]
 
-    cajaApellidos.value = userSelected[0].apellidos
+    /*================Funcionalidad: Llenar el combo de paises desde JS, más adelante se puede usar una API ================*/
+
+    // Capturar el combo (select) de países
+
+    const comboPaises = document.getElementById("pais-input");
+    console.log(comboPaises)
+
+
+    // Funcion para ordernar cualquier array de objetos por la propiedad que se desee
+
+    let odernarArrayObjs = (array, propertyName) =>{
+
+        const arraySorted = array.sort((a,b)=>{
+
+            const propA = a[propertyName];
+            const propB = b[propertyName];
+
+            if (typeof propA === 'string' && typeof propB === 'string') {
+                return propA.localeCompare(propB);
+            }
+
+
+            if (typeof propA === 'number' && typeof propB === 'number') {
+            return propA - propB;
+            }
+
+            return 0
+
+        } );
+
+        return arraySorted
+    }
+
+    console.log(odernarArrayObjs(objPaises, "nombre"))
+
+
+    odernarArrayObjs(objPaises)
+
+    // LLenar el combo de países del formulario de registro
+
+
+    objPaises.forEach((pais)=>{
+        comboPaises.innerHTML += 
+        `
+            <option value="${pais.value}">${pais.nombre}</option>   
+        `
+    })
+
+    // Colocar a Perú primero en el combo
+
+    let peruSelected = objPaises.find((pais)=>pais.nombre == "Perú")
+
+    console.log(peruSelected)
+
+    comboPaises.selectedIndex=objPaises.indexOf(peruSelected)
+
+
+    /*================Funcionalidad: Registrar Usuario ================*/
+
+    let objUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    const btnRegister = document.getElementById("btn-registro-user")
+    console.log(btnRegister)
+
+  
+    btnRegister.addEventListener("click", (e) => {
+        e.preventDefault()
+
+        let nombreUser = document.getElementById("nombre-input").value.trim();
+        let apellidoUser = document.getElementById("apellido-input").value.trim();
+        let docUser = document.getElementById("dni-input").value.trim();
+        let emailUser = document.getElementById("correo-input").value.trim();
+        let passwordUser = document.getElementById("contra-input").value.trim();
+        let paisUser = document.getElementById("pais-input").value.trim();
+        let sexoUser = document.getElementById("sexo-input").value.trim();
+
+        objUsers.push(
+            {
+                id: objUsers.length+1,
+                nombre: nombreUser,
+                apellidos: apellidoUser,
+                dni: docUser,
+                correo: emailUser,
+                password: passwordUser,
+                pais: paisUser,
+                sexo: sexoUser,
+            }
+        )
+
+        localStorage.setItem("users",JSON.stringify(objUsers))  
+
+        alert("Usuario registrado exitosamente 🚀")
+
+    })
 }
 
-lupaIcon.addEventListener("click", ()=>{
-    autocompletarUsuario(dniUser.value); // Llamamos la función con ese valor
-})
 

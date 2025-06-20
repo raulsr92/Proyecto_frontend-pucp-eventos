@@ -136,7 +136,7 @@
 
 /* == color de placeholder el elemento input == */
 
-input[type="text"]::placeholder{
+#barra-filtro::placeholder{
     color: white;
     font-size: 16px;
     letter-spacing: 1px;
@@ -268,12 +268,16 @@ input[type="text"], input[type="email"],input[type="password"]{
     padding: 10px 15px 10px 10px;
     border-radius: 3px;
     transition: box-shadow 0.2s ease;
+    background-color: var(--input-background1);
+
 }
 
 select{
     border: 0;
     padding: 10px 15px 10px 10px;
     border-radius: 5px;
+    background-color: var(--input-background1);
+
 }
 
 input[type="text"]:focus{
@@ -298,6 +302,18 @@ select:focus{
     background-color: white;
     outline: 1px solid var(--main-color);
     box-shadow:0px 0px 0px 4px rgba(0, 150, 136, 0.2);  
+}
+
+input[type="text"]::placeholder{
+    color: var(--icons-color);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+select::placeholder{
+    color: var(--icons-color);
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 
@@ -483,7 +499,7 @@ select:focus{
     padding: 10px 15px 10px 40px;
     border-radius: 10px;
     outline: 0;
-    border: 1px solid var(--icons-color);
+    /*border: 1px solid var(--icons-color);*/
 }
 
 .asistente-info--formulario div label{
