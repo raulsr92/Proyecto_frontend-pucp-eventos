@@ -684,7 +684,7 @@ select::placeholder{
 }
 
 .home-principal{
-    padding: 20px 15px
+    padding: 40px 15px
 }
 
 #cards{
@@ -699,35 +699,104 @@ select::placeholder{
     font-size: 25px;
 }
 
-/*Estilos de una carda*/
+/*Estilos de una card*/
 
 .cards-container{
     display: grid;
-    grid-template-columns: repeat(1 auto);
+    row-gap: 30px;
+    grid-template-columns: repeat(1, auto);
     width: 100%;
-    
+    padding: 0px 20px ;
 }
 
 .event-card{
     width: 100%;
+    box-shadow: 2px 3px 6px 0px rgba(0,0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event-cart--media{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
 }
 
 .event-card img{
     width: 100%;
+    object-fit: contain;
+    display: flex;
+
 }
 
-.event-info{
+.event-card--info{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    padding: 15px 0;
+}
+
+.event-card--info h3{
+    font-size: 15px;
+    text-align: start;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 .evento-info--date{
     display: flex;
+    background-color: var(--soft);
+    padding: 7px 15px;
+    column-gap: 10px;
+    color: var(--variant-color-secondary);
+}
+
+.evento-info--date p{
+    font-size: 15px;
+
 }
 
 .evento-info--cantidad{
     display: flex;
+    padding-left: 15px;
+    font-size: 15px;
+    background-color: var(--soft);
+    padding: 7px 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.evento-info--cantidad > div{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.icon-minus{
+    font-size: 20px;
+    color: var(--icons-color);
+    cursor: pointer;
+}
+
+.icon-plus{
+    font-size: 20px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.icon-heart{
+    color: var(--icons-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.evento-info--cta{
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -937,11 +1006,33 @@ select::placeholder{
         "footer1 footer1 footer1  "
         "footer2 footer3 footer4"
         ;
-
         row-gap: 40px;
         padding: 70px 40px ;
-
     }
+
+    /* =========================== Página Home ==================================== */
+
+    #grid-home{
+        grid-template-areas: 
+            "header header"
+            "menu menu"
+            "principal principal"
+            "footer footer"
+        ;
+    }
+
+    .home-principal{
+        padding: 40px 15px 60px 15px
+    }
+
+    /*Estilos de una card*/
+
+    .cards-container{
+        grid-template-columns: repeat(2, auto);
+        column-gap: 30px;
+    }
+
+    
 }
 
 
@@ -1015,6 +1106,27 @@ select::placeholder{
 
     .principal--registro{
         padding: 50px 40px;
+    }
+
+    /* =========================== Página Home ==================================== */
+
+    #grid-home{
+        grid-template-areas: 
+            "header header header header"
+            "menu principal principal principal "
+            "footer footer footer footer"
+        ;
+    }
+
+    .home-principal{
+        padding: 40px 15px 80px 15px
+    }
+
+    /*Estilos de una card*/
+
+    .cards-container{
+        grid-template-columns: repeat(4, auto);
+        column-gap: 30px;
     }
 
 
