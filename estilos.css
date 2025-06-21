@@ -683,6 +683,54 @@ select::placeholder{
     color: var(--main-color);
 }
 
+.home-principal{
+    padding: 20px 15px
+}
+
+#cards{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+}
+
+#cards h1{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+/*Estilos de una carda*/
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(1 auto);
+    width: 100%;
+    
+}
+
+.event-card{
+    width: 100%;
+}
+
+.event-card img{
+    width: 100%;
+}
+
+.event-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.evento-info--date{
+    display: flex;
+}
+
+.evento-info--cantidad{
+    display: flex;
+}
+
+
 /* =========================== Página Registro ==================================== */
 
 
