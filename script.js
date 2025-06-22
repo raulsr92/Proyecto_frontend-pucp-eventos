@@ -97,6 +97,7 @@ const objEventos = [
     },       
 ]
 
+let carrito = JSON.parse(localStorage.getItem("carritoInfo")) || [];
 
 const page = window.location.pathname;
 
@@ -362,8 +363,7 @@ if (page.includes("checkout.html")) {
 
     /*================Funcionalidad: Agregar productos al carrito ================*/
 
-    let carrito = JSON.parse(localStorage.getItem("carritoInfo")) || [];
-
+    /*El array de objetos en local storage del carrito se creó en la parte global para acceder desde cualquier página */
     /*Capturo a todos los botones de "Agregar al carrito" en un array*/
 
     let botonesCart = document.getElementsByClassName("btn-carrito")
@@ -388,8 +388,6 @@ if (page.includes("checkout.html")) {
         console.log(`ID de evento seleccionado: ${selectedItem}`)
         console.log(`Evento seleccionado: ${objEventos[id].nombre}`)
 
-
-
         let busquedaEventoEnCarrito = carrito.find((event)=>event.id===selectedItem)
         console.log(busquedaEventoEnCarrito)
 
@@ -412,8 +410,56 @@ if (page.includes("checkout.html")) {
         console.log("Mi carrito de eventos:")
         console.log(JSON.parse(localStorage.getItem("carritoInfo")))
     }
+
+} else if (page.includes("carritoDeCompras.html")){
+
+    /*================Funcionalidad: Imprimir eventos en el carrito ================*/
+
+    let carritoCardsContainer = document.querySelector(".cards-carrito-container")
+    console.log(carritoCardsContainer)
+
+    console.log(carrito)
+
+    let imprimirCarrito = () =>{
+        carrito.forEach((evento)=>{
+
+            let eventoEnCarrito = objEventos.find((eventoBuscado)=>eventoBuscado.id == evento.id)
+            console.log(eventoEnCarrito)
+
+            /*Destructurando las propiedades necesarias del evento encontrado que cumpla con el ID del carrito*/ 
+            let {nombre,nombreCorto,poster, precio,categoria} =eventoEnCarrito
+            
+            carritoCardsContainer.innerHTML += 
+            `
+                <article class="carrito-card">
+                        <div class="carrito-card-section1">
+                            <div class="carrito-card-img-container">
+                                <img src="${poster}" alt="">
+                            </div>
+                            <div class="carrito-card-info-container">
+                                <h4 class="product-big">${nombre}</h4>
+                                <h4 class="product-small">${nombreCorto}</h4>
+                                <p>Teatro</p>
+                            </div>
+                            <div class="carrito-card-icon-container">
+                                <i class="fa-solid fa-circle-xmark delete-icon"></i>
+                            </div>
+                        </div>
     
-} else if (page.includes("home.html")){
+                        <div class="carrito-card-section2">
+                            <p>S/ ${precio}</p>
+                            <div>
+                                <i class="fa-solid fa-circle-minus icon-minus"></i>
+                                <span>${evento.cantidad}</span>
+                                <i class="fa-solid fa-circle-plus icon-plus"></i>
+                            </div>
+                        </div>
+                </article>
+            `
+        })
+
+    }
+        imprimirCarrito();
 
 }
 

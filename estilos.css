@@ -1107,6 +1107,7 @@ select::placeholder{
 .carrito-card-section1{
     width: 100%;
     display: grid;
+    column-gap: 5px;
     grid-template-columns: 1fr 2fr 0.5fr;
     justify-items: center;
     align-items:flex-start;
@@ -1118,8 +1119,17 @@ select::placeholder{
     align-items: center;
 }
 
+.carrito-card-img-container{
+    width: 100%;
+    height: 61px;
+    overflow: hidden;
+}
+
 .carrito-card-img-container img{
     width: 100%;
+    object-fit: cover;
+    display: flex;
+
 }
 
 .carrito-card-info-container{
@@ -1138,6 +1148,10 @@ select::placeholder{
     display: flex;
     column-gap: 20px;
     align-items: center;
+}
+
+.carrito-card-icon-container{
+    justify-self: self-end;
 }
 
 .icon-minus{
@@ -1242,6 +1256,36 @@ select::placeholder{
         width: 90%;
     }
 
+    /* =========================== Página Carrito ==================================== */
+
+    .product-big{
+        display: block;
+    }   
+
+    .product-small{
+        display: none;
+    }   
+
+    .carrito-card-img-container{
+        height: 100px;
+    }
+
+    .principal-carrito {
+        padding: 40px 15px;
+    }
+    .carrito-card {
+        padding: 30px 35px;
+    }
+
+    .carrito-card-info-container{
+        justify-self: self-start;
+        text-align: left; 
+        align-items: self-start;
+    }
+
+    .carrito-card-section1{
+        column-gap: 15px;
+    }
 }
 
 
