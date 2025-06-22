@@ -262,6 +262,27 @@
         letter-spacing: 0.6px;
 }
 
+.btn-carrito{
+        padding: 9px 15px;
+        border-radius: 20px;
+        background-color: var(--main-color);
+        border: 0;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        text-decoration: none; 
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+}
+
+
+.btn-carrito:hover{
+        background-color: var(--third-color);
+}
+
 /* =========================== Cajas de Formulario ==================================== */
 
 input[type="text"], input[type="email"],input[type="password"]{
@@ -684,14 +705,17 @@ select::placeholder{
 }
 
 .home-principal{
-    padding: 40px 15px
+    padding: 40px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cards{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    width: 100%;
+    width: 95%;
 }
 
 #cards h1{
@@ -706,7 +730,6 @@ select::placeholder{
     row-gap: 30px;
     grid-template-columns: repeat(1, auto);
     width: 100%;
-    padding: 0px 20px ;
 }
 
 .event-card{
@@ -790,6 +813,10 @@ select::placeholder{
     color: var(--icons-color);
     font-size: 20px;
     cursor: pointer;
+}
+
+.icon-heart:hover{
+    color: rgb(150, 34, 34);
 }
 
 .evento-info--cta{
@@ -1028,15 +1055,19 @@ select::placeholder{
     /*Estilos de una card*/
 
     .cards-container{
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 30px;
     }
 
     
+    #cards{
+        width: 90%;
+    }
+
 }
 
 
-/*Pantallas grandes - tablet*/
+/*Pantallas grandes - laptop*/
 
 @media screen and ( min-width: 801px) {
         
@@ -1113,21 +1144,43 @@ select::placeholder{
     #grid-home{
         grid-template-areas: 
             "header header header header"
-            "menu principal principal principal "
-            "footer footer footer footer"
+            "menu menu menu menu"
+            "principal principal principal principal"
+            "footer footer footer footer footer"
         ;
     }
 
+    #cards h1{
+        font-size: 35px;
+        text-align: start;
+    }
+
     .home-principal{
-        padding: 40px 15px 80px 15px
+        padding: 40px 80px 80px 80px
+    }
+
+    #cards{
+        row-gap: 40px;
+        width: 90%;
     }
 
     /*Estilos de una card*/
 
     .cards-container{
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
     }
 
 
+}
+
+/*Pantallas super grandes*/
+
+@media screen and ( min-width: 1550px){
+
+/* =========================== Página Home ==================================== */
+
+    #cards{
+        width: 75%;
+    }
 }
