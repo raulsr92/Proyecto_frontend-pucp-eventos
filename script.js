@@ -14,6 +14,74 @@ const objUsuarios = [
         }
 ]
 
+const objEventos = [
+    {
+        id: 1,
+        nombre: "Limones, limones, limones, limones, limones de Sam Steiner",
+        poster: "./img/eventos/evento1.jpg",
+        fecha: "Sábado 26 de Junio",
+        hora: "08:30 PM",
+        precio: 60
+    },
+    {
+        id: 2,
+        nombre: "RIO en concierto | Sideshow ROCKPATRIO",
+        poster: "./img/eventos/evento2.jpg",
+        fecha: "Sábado 21 de Junio",
+        hora: "09:00 PM",
+        precio: 89
+    },
+    {
+        id: 3,
+        nombre: "Alianza Lima vs Gremio | Copa Conmebol Sudamericana",
+        poster: "./img/eventos/evento3.jpg",
+        fecha: "Miércoles 16 de Julio",
+        hora: "07:30 PM",
+        precio: 60
+    },
+    {
+        id: 4,
+        nombre: "Festival de Comedia 4",
+        poster: "./img/eventos/evento4.jpg",
+        fecha: "Jueves 26 de Junio",
+        hora: "07:30 PM",
+        precio: 60
+    },
+    {
+        id: 5,
+        nombre: "CYRANO DE BERGERAC",
+        poster: "./img/eventos/evento5.jpg",
+        fecha: "Jueve 02 de Octubre",
+        hora: "08:00 PM",
+        precio: 55
+    }, 
+    {
+        id: 6,
+        nombre: "Cecilia Bracamonte | Por mi Perú ",
+        poster: "./img/eventos/evento6.jpg",
+        fecha: "Domingo 27 de Julio",
+        hora: "10:00 PM",
+        precio: 68
+    },
+    {
+        id: 7,
+        nombre: "Una noche de Salsa 14",
+        poster: "./img/eventos/evento7.jpg",
+        fecha: "Sábado 28 de Marzo",
+        hora: "07:30 PM",
+        precio: 97
+    },
+    {
+        id: 8,
+        nombre: "Circo de Kiko",
+        poster: "./img/eventos/evento8.jpg",
+        fecha: "Viernes 25 de Julio",
+        hora: "06:00 PM",
+        precio: 54
+    },       
+]
+
+
 const page = window.location.pathname;
 
 
@@ -230,6 +298,49 @@ if (page.includes("checkout.html")) {
         document.getElementById("formulario-user").reset()
     })
 } else if (page.includes("home.html")){
+    
+    /*================Funcionalidad: Imprimir cards desde JS ================*/
+
+    let cardsContainer = document.querySelector(".cards-container");
+
+    let imprimirCards = ()=>{
+        objEventos.forEach((evento)=>{
+            cardsContainer.innerHTML += 
+            `
+            <article class="event-card">
+                <div class="event-card--media">
+                    <img src="${evento.poster}" alt="Evento ${evento.id}">
+                </div>
+
+                <div class="event-card--info">
+                    <h3>${evento.nombre}</h3>
+                    <div class="evento-info--date">
+                        <i class="fa-regular fa-calendar"></i>
+                        <p>${evento.fecha} - ${evento.hora}</p>
+                    </div>
+
+                    <div class="evento-info--cantidad">
+                        <p>S/ ${evento.precio}.00</p>
+                        <div>
+                            <i class="fa-solid fa-circle-minus icon-minus"></i>
+                            <span>0</span>
+                            <i class="fa-solid fa-circle-plus icon-plus"></i>
+                        </div>
+                    </div>
+                    <div class="evento-info--cta">
+                        <i class="fa-solid fa-heart icon-heart"></i>
+                        <a href="#" class="btn-carrito">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Agregar al carrito
+                        </a>
+                    </div>          
+                </div>
+            </article>
+        `
+        })
+    }
+
+    imprimirCards()
 
 }
 

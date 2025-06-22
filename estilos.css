@@ -739,17 +739,17 @@ select::placeholder{
     overflow: hidden;
 }
 
-.event-cart--media{
+.event-card--media{
     width: 100%;
     overflow: hidden;
     display: flex;
+    height: 205px;
 }
 
 .event-card img{
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: flex;
-
 }
 
 .event-card--info{
@@ -764,7 +764,7 @@ select::placeholder{
     text-align: start;
     padding-left: 15px;
     padding-right: 15px;
-
+    height: 36px;
 }
 
 .evento-info--date{
