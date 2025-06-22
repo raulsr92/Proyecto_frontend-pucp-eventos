@@ -686,7 +686,11 @@ select::placeholder{
 }
 
 .categorias-ventana >div input{
-    display: none;
+    /*display: none;*/
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
 }
 
 .categorias-ventana >div label{
@@ -702,6 +706,13 @@ select::placeholder{
 .categorias-ventana >div label:hover{
     border: 1px solid var(--main-color);
     color: var(--main-color);
+}
+
+
+.categorias-ventana >div input:focus + label{
+    background-color: var(--main-color);
+    color: white;
+    box-shadow: 2px 3px 6px 2px rgba(0,0, 0, 0.15) ;
 }
 
 .home-principal{

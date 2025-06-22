@@ -18,6 +18,7 @@ const objEventos = [
     {
         id: 1,
         nombre: "Limones, limones, limones, limones, limones de Sam Steiner",
+        categoria: "Teatro",
         poster: "./img/eventos/evento1.jpg",
         fecha: "Sábado 26 de Junio",
         hora: "08:30 PM",
@@ -26,6 +27,7 @@ const objEventos = [
     {
         id: 2,
         nombre: "RIO en concierto | Sideshow ROCKPATRIO",
+        categoria: "Conciertos",
         poster: "./img/eventos/evento2.jpg",
         fecha: "Sábado 21 de Junio",
         hora: "09:00 PM",
@@ -34,6 +36,7 @@ const objEventos = [
     {
         id: 3,
         nombre: "Alianza Lima vs Gremio | Copa Conmebol Sudamericana",
+        categoria: "Deportes",
         poster: "./img/eventos/evento3.jpg",
         fecha: "Miércoles 16 de Julio",
         hora: "07:30 PM",
@@ -42,6 +45,7 @@ const objEventos = [
     {
         id: 4,
         nombre: "Festival de Comedia 4",
+        categoria: "Stand up",
         poster: "./img/eventos/evento4.jpg",
         fecha: "Jueves 26 de Junio",
         hora: "07:30 PM",
@@ -50,6 +54,7 @@ const objEventos = [
     {
         id: 5,
         nombre: "CYRANO DE BERGERAC",
+        categoria: "Teatro",
         poster: "./img/eventos/evento5.jpg",
         fecha: "Jueve 02 de Octubre",
         hora: "08:00 PM",
@@ -58,6 +63,7 @@ const objEventos = [
     {
         id: 6,
         nombre: "Cecilia Bracamonte | Por mi Perú ",
+        categoria: "Conciertos",
         poster: "./img/eventos/evento6.jpg",
         fecha: "Domingo 27 de Julio",
         hora: "10:00 PM",
@@ -66,6 +72,7 @@ const objEventos = [
     {
         id: 7,
         nombre: "Una noche de Salsa 14",
+        categoria: "Conciertos",
         poster: "./img/eventos/evento7.jpg",
         fecha: "Sábado 28 de Marzo",
         hora: "07:30 PM",
@@ -74,6 +81,7 @@ const objEventos = [
     {
         id: 8,
         nombre: "Circo de Kiko",
+        categoria: "Circos",
         poster: "./img/eventos/evento8.jpg",
         fecha: "Viernes 25 de Julio",
         hora: "06:00 PM",
@@ -341,6 +349,65 @@ if (page.includes("checkout.html")) {
     }
 
     imprimirCards()
+
+    console.log("en home.html")
+
+    /*================Funcionalidad: Agregar productos al carrito ================*/
+
+    let carrito = JSON.parse(localStorage.getItem("carritoInfo")) || [];
+
+    /*Capturo a todos los botones de "Agregar al carrito" en un array*/
+
+    let botonesCart = document.getElementsByClassName("btn-carrito")
+    console.log(botonesCart)
+
+    for (let i = 0; i < botonesCart.length; i++) {
+        
+        console.log(botonesCart[i])
+
+        botonesCart[i].addEventListener("click", (e)=>{
+            e.preventDefault();
+            agregarAlCarrito(i)
+        } )
+        
+    }
+
+
+    let agregarAlCarrito = (id) =>{
+
+        console.log("Se hizo click en boton de agregar al carrito")
+        let selectedItem = id+1;
+        console.log(`Posicion de la card seleccionada: ${id}`)
+        console.log(`ID de evento seleccionado: ${selectedItem}`)
+        console.log(`Evento seleccionado: ${objEventos[id].nombre}`)
+
+
+
+        let busquedaEventoEnCarrito = carrito.find((event)=>event.id===selectedItem)
+        console.log(busquedaEventoEnCarrito)
+
+        if(busquedaEventoEnCarrito === undefined){
+            carrito.push(
+                {
+                    id: selectedItem,
+                    cantidad: 1,
+                }
+            )
+        } else{
+            busquedaEventoEnCarrito.cantidad = busquedaEventoEnCarrito.cantidad+1;
+        }
+
+        console.log(carrito)
+
+        /*Agregar al carrito el evento*/
+        localStorage.setItem("carritoInfo",JSON.stringify(carrito))  
+
+        console.log("Mi carrito de eventos:")
+        console.log(JSON.parse(localStorage.getItem("carritoInfo")))
+
+    }
+
+    
 
 }
 
