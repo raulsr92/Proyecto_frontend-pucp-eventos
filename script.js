@@ -18,6 +18,7 @@ const objEventos = [
     {
         id: 1,
         nombre: "Limones, limones, limones, limones, limones de Sam Steiner",
+        nombreCorto: "Limones, limones, limones...",
         categoria: "Teatro",
         poster: "./img/eventos/evento1.jpg",
         fecha: "Sábado 26 de Junio",
@@ -27,6 +28,7 @@ const objEventos = [
     {
         id: 2,
         nombre: "RIO en concierto | Sideshow ROCKPATRIO",
+        nombreCorto:"RIO en concierto...",
         categoria: "Conciertos",
         poster: "./img/eventos/evento2.jpg",
         fecha: "Sábado 21 de Junio",
@@ -36,6 +38,7 @@ const objEventos = [
     {
         id: 3,
         nombre: "Alianza Lima vs Gremio | Copa Conmebol Sudamericana",
+        nombreCorto:"Alianza Lima vs Gremio | Copa...",
         categoria: "Deportes",
         poster: "./img/eventos/evento3.jpg",
         fecha: "Miércoles 16 de Julio",
@@ -45,6 +48,7 @@ const objEventos = [
     {
         id: 4,
         nombre: "Festival de Comedia 4",
+        nombreCorto:"Festival de Comedia 4",
         categoria: "Stand up",
         poster: "./img/eventos/evento4.jpg",
         fecha: "Jueves 26 de Junio",
@@ -54,6 +58,7 @@ const objEventos = [
     {
         id: 5,
         nombre: "CYRANO DE BERGERAC",
+        nombreCorto:"CYRANO DE BERGERAC",        
         categoria: "Teatro",
         poster: "./img/eventos/evento5.jpg",
         fecha: "Jueve 02 de Octubre",
@@ -63,6 +68,7 @@ const objEventos = [
     {
         id: 6,
         nombre: "Cecilia Bracamonte | Por mi Perú ",
+        nombreCorto:"Cecilia Bracamonte | Por...",        
         categoria: "Conciertos",
         poster: "./img/eventos/evento6.jpg",
         fecha: "Domingo 27 de Julio",
@@ -72,6 +78,7 @@ const objEventos = [
     {
         id: 7,
         nombre: "Una noche de Salsa 14",
+        nombreCorto:"Una noche de Salsa 14",        
         categoria: "Conciertos",
         poster: "./img/eventos/evento7.jpg",
         fecha: "Sábado 28 de Marzo",
@@ -81,6 +88,7 @@ const objEventos = [
     {
         id: 8,
         nombre: "Circo de Kiko",
+        nombreCorto:"Circo de Kiko",        
         categoria: "Circos",
         poster: "./img/eventos/evento8.jpg",
         fecha: "Viernes 25 de Julio",
@@ -403,10 +411,9 @@ if (page.includes("checkout.html")) {
 
         console.log("Mi carrito de eventos:")
         console.log(JSON.parse(localStorage.getItem("carritoInfo")))
-
     }
-
     
+} else if (page.includes("home.html")){
 
 }
 

@@ -597,8 +597,6 @@ select::placeholder{
     border-top-right-radius: 10px;
 }
 
-
-
 .form-icon-lupa{
     /*position: absolute;
     right: 10px;
@@ -1053,6 +1051,123 @@ select::placeholder{
 }
 /*-----------------------------------------------------------------*/
 
+/* =========================== Página Carrito ==================================== */
+
+
+#grid-carrito{
+    grid-template-areas: 
+        "header"
+        "principal"
+        "contenido-adicional"
+        "footer"
+    ; 
+}
+
+.menu-carrito{
+    display: none;
+}
+
+.principal-carrito{
+    padding: 40px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards-carrito{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 97%;
+}
+
+#cards-carrito h1{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.cards-carrito-container{
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: repeat(1, auto);
+    width: 100%;
+}
+
+
+.carrito-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px; 
+    box-shadow: 2px 3px 6px 0px rgba(0,0, 0, 0.15);
+    padding: 30px 15px;
+    row-gap: 20px;
+}
+
+.carrito-card-section1{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr;
+    justify-items: center;
+    align-items:flex-start;
+}
+
+.carrito-card-section2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito-card-img-container img{
+    width: 100%;
+}
+
+.carrito-card-info-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.carrito-card-info-container > p{
+    font-size: 14px;
+    color: var(--icons-color);
+}
+
+
+.carrito-card-section2 > div{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.icon-minus{
+    font-size: 25px;
+}
+
+.icon-plus{
+    font-size: 25px;
+}
+
+
+.delete-icon{
+    font-size: 25px;
+    color: var(--variant-color-secondary);
+    cursor: pointer;
+}
+
+.carrito-card-section2 > div > span{
+    color: var(--variant-color-secondary);
+    font-weight: 700;
+}
+
+.carrito-card-section2 > p{
+    color: var(--variant-color-secondary);
+    font-weight: 700; 
+}
+
+.product-big{
+    display: none;
+}
 
 /*Pantallas medianas - tablet*/
 

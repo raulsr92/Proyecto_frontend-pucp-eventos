@@ -9,8 +9,7 @@
 
 </head>
 <body>
-
-    <main class="grid-container">
+    <main id="grid-carrito" class="grid-container">
         <header class="header item" >
         <nav>
             <div class="navbar-section1">
@@ -59,17 +58,46 @@
         </nav>
         </header>
 
-        <section class="menu item">
+        <section class="menu item menu-carrito">
             <h4>
               Menu
             </h4>
         </section>
 
-        <section class="principal item">
-            <h1>Carrito de Compras</h1>
+        <section class="principal item principal-carrito">
 
-            <h2>Eventos en tu carrito:</h2>
+            <section id="cards-carrito">
+                <h1>Carrito</h1>
+                <div class="cards-carrito-container">
 
+                    <article class="carrito-card">
+                        <div class="carrito-card-section1">
+                            <div class="carrito-card-img-container">
+                                <img src="./img/eventos/evento1.jpg" alt="">
+                            </div>
+                            <div class="carrito-card-info-container">
+                                <h4 class="product-big">Limones, limones, limones, limones, limones de Sam Steiner</h4>
+                                <h4 class="product-small">Limones, limones, limones...</h4>
+                                <p>Teatro</p>
+                            </div>
+                            <div class="carrito-card-icon-container">
+                                <i class="fa-solid fa-circle-xmark delete-icon"></i>
+                            </div>
+                        </div>
+    
+                        <div class="carrito-card-section2">
+                            <p>S/ 30.00</p>
+                            <div>
+                                <i class="fa-solid fa-circle-minus icon-minus"></i>
+                                <span>0</span>
+                                <i class="fa-solid fa-circle-plus icon-plus"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+<!--
             <ul>
               <li>
                 <strong>Concierto</strong><br>
@@ -110,7 +138,7 @@
                 <button>Eliminar</button>
               </li>
             </ul>
-
+-->
             <div style="
               border: 1px solid #ccc;
               padding: 10px;
@@ -121,8 +149,7 @@
               <p><strong>Total a pagar: S/1900.00</strong></p>
             </div>
 
-            <p><a href="pagina-de-eventos.html">Seguir comprando</a></p>
-            <p><a href="pago.html">Ir a pagar</a></p>
+
         </section>
 
         <section class="contenido-adicional item">
