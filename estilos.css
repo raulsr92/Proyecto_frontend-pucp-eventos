@@ -278,9 +278,62 @@
         column-gap: 5px;
 }
 
-
 .btn-carrito:hover{
         background-color: var(--third-color);
+}
+
+
+/* =========================== Boton Flotante cart ==================================== */
+
+#btn-flotante-cart{
+    width: 80px;
+    height: 70px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 7px 0px var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    border-top: 3px solid var(--main-color);
+    border-left: 3px solid var(--main-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: var(--main-color);
+    background-color: white;
+    position: fixed;
+    right: 0;
+    bottom: 55%;
+    text-decoration: none;
+
+} 
+
+#btn-flotante-cart:hover{
+    background-color: var(--soft);
+    color: var(--third-color);
+    box-shadow: 0px 0px 10px 0px var(--main-color);
+}
+
+.icon-shopping-fotante{
+    font-size: 35px;
+    padding-left: 5px;
+}
+
+#btn-flotante-cart span{
+    display: flex;
+    color: white;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    font-weight: 700;
+    border: 3px solid var(--input-background1);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    right: 15%;
+    top: 5%;
+    font-size: 14px;
 }
 
 /* =========================== Cajas de Formulario ==================================== */
@@ -291,7 +344,6 @@ input[type="text"], input[type="email"],input[type="password"]{
     border-radius: 3px;
     transition: box-shadow 0.2s ease;
     background-color: var(--input-background1);
-
 }
 
 select{
@@ -299,7 +351,6 @@ select{
     padding: 10px 15px 10px 10px;
     border-radius: 5px;
     background-color: var(--input-background1);
-
 }
 
 input[type="text"]:focus{
@@ -716,6 +767,7 @@ select::placeholder{
 }
 
 .home-principal{
+    position: relative;
     padding: 40px 15px;
     display: flex;
     justify-content: center;
@@ -1194,4 +1246,25 @@ select::placeholder{
     #cards{
         width: 75%;
     }
+
+/* =========================== Boton Flotante cart ==================================== */
+
+#btn-flotante-cart{
+    width: 100px;
+    height: 80px;
+    right: 0;
+    bottom: 60%;
+} 
+
+.icon-shopping-fotante{
+    font-size: 40px;
+}
+
+#btn-flotante-cart span{
+    width: 28px;
+    height: 28px;
+    right: 26%;
+    top: 5%;
+    font-size: 16px;
+}
 }

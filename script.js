@@ -372,7 +372,6 @@ if (page.includes("checkout.html")) {
         
     }
 
-
     let agregarAlCarrito = (id) =>{
 
         console.log("Se hizo click en boton de agregar al carrito")
