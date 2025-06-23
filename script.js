@@ -407,9 +407,37 @@ if (page.includes("checkout.html")) {
         /*Agregar al carrito el evento*/
         localStorage.setItem("carritoInfo",JSON.stringify(carrito))  
 
+        actualizarContadorEnCarrito();
+
         console.log("Mi carrito de eventos:")
         console.log(JSON.parse(localStorage.getItem("carritoInfo")))
     }
+
+    /*================Funcionalidad: Actualizar contador de carrito ================*/
+
+
+    let cantidadItemsEnCarrito =()=>{
+    let cantidad=0;
+        carrito.forEach((evento)=>{
+
+            cantidad += evento.cantidad
+
+        })
+        console.log(cantidad)
+
+        return cantidad
+    }
+
+    let contadorCarrito = document.querySelector(".contador-eventos")
+
+    let actualizarContadorEnCarrito =() =>{
+        contadorCarrito.innerHTML=cantidadItemsEnCarrito();
+    }
+
+    actualizarContadorEnCarrito()
+
+    
+
 
 } else if (page.includes("carritoDeCompras.html")){
 
