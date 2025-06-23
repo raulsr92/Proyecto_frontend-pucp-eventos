@@ -1,4 +1,3 @@
-
 const objUsuarios = [
         {
             id: 1,
@@ -98,9 +97,12 @@ const objEventos = [
 ]
 
 let carrito = JSON.parse(localStorage.getItem("carritoInfo")) || [];
+console.log(carrito)
+
+let objUsers = JSON.parse(localStorage.getItem("users")) || [];
+console.log(objUsers)
 
 const page = window.location.pathname;
-
 
 if (page.includes("checkout.html")) {
     
@@ -234,10 +236,6 @@ if (page.includes("checkout.html")) {
 
     /*================Funcionalidad: Registrar Usuario ================*/
 
-    let objUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-    console.log(objUsers)
-
     const btnRegister = document.getElementById("btn-registro-user")
     console.log(btnRegister)
 
@@ -314,6 +312,80 @@ if (page.includes("checkout.html")) {
 
         document.getElementById("formulario-user").reset()
     })
+    
+} else if(page.includes("login.html")){
+
+    /*================Funcionalidad: Iniciar Sesión ================*/
+
+    /*Capturar boton ingresar*/
+
+    let btnLogin = document.getElementById("btn-login-user")
+    console.log(btnLogin)
+
+
+    btnLogin.addEventListener("click", (e)=>{
+        e.preventDefault();
+        iniciarSesion()
+    })
+
+    /*Definicion de la f de iniciarSesion*/
+
+    let iniciarSesion = ()=>{
+        
+        console.log("ha intendao iniciar sesión")
+
+        /*Capturar correo, contraseña y boton ingresar*/
+        let infoCorreoLogin = document.querySelector(".correo-login")
+        console.log(infoCorreoLogin)
+        let infoPasswordLogin = document.querySelector(".contra-login")
+        console.log(infoPasswordLogin)
+
+        /*Encontrar usuario mediante su correo*/ 
+
+        try {
+
+            /*Obtener los valores ingresados por el usuario a traves de la propiedad value de cada input*/ 
+            let correoLogin = infoCorreoLogin.value.trim()
+            console.log(correoLogin)
+            let passLogin = infoPasswordLogin.value.trim()
+            console.log(passLogin)
+
+            /*Buscar al usuario en el array de usuarios del localStorage (se creó cuando se registraron)*/
+            let usuarioExiste = objUsers.find((userSearched)=> userSearched.correo === correoLogin )
+
+            console.log(usuarioExiste)
+
+            /*Validaciones de campos vacíos*/
+
+            if (!correoLogin || !passLogin ) {
+                throw new Error("Ls campos de correo electrónico y contraseña son Obligatorios ")
+            }
+
+
+            /*Validaciones si usuario existe*/
+
+            if (!usuarioExiste) {
+                throw new Error("El usuario no existe 😪 ")
+            } else{
+
+                /*Si el usuario existe, ahora validamos que la contraseña sea correcta*/
+
+                if (usuarioExiste.password !== passLogin) {
+
+                    throw new Error("Su contraseña es incorrecta  ⚠")
+                } else{
+
+                    alert("!Bienvenido!💚")
+                    window.location.href = "home.html"
+                } 
+                
+            }            
+        } catch (error) {
+            alert(error.message)
+        }
+    }
+
+
 } else if (page.includes("home.html")){
     
     /*================Funcionalidad: Imprimir cards desde JS ================*/

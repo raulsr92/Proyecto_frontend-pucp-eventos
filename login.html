@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title title>Login</title>
 
     <!-- <link rel="stylesheet" href="practica.css"> -->
     <script src="https://kit.fontawesome.com/695c2d47eb.js" crossorigin="anonymous"></script>
@@ -34,11 +36,11 @@
           <h1>Bienvenido a G2 Eventos</h1>
 
           <!--  FOMURALI0 -->
-          <form id="formulario-user" class="form-registro" >
+          <form id="formulario-user" class="form-registro" action="home.html" >
             <div class="form-info">
-                <input id="nombre-input" class="register-input" type="text" placeholder="Tu correo electrónico" >
+                <input id="nombre-input" class="register-input correo-login" type="text" placeholder="Tu correo electrónico" >
 
-                <input id="apellido-input" type="text" class="register-input" placeholder="Contraseña">
+                <input id="contra-input" type="text" class="register-input contra-login" placeholder="Contraseña">
 
             </div>
 
@@ -46,7 +48,7 @@
                 <a class="form-forget-link" href="">¿Olvidaste tu contraseña?</a>
             </div>
 
-            <input id="btn-registro-user" class="btn-main" type="submit" value="Ingresar">
+            <input id="btn-login-user" class="btn-main" type="submit" value="Ingresar">
 
             <div class="form-to-register">
                 <p>¿No tienes una cuenta?</p>
@@ -140,6 +142,10 @@
     </main>
     <!--Instalacion de FontAwesome-->
     <script src="https://kit.fontawesome.com/33e3caf9b6.js" crossorigin="anonymous"></script>
+
+    <!--Instalacion de Archivo JS-->
+
+    <script src="./script.js"></script>
 
 </body>
 </html>
