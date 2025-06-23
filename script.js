@@ -536,7 +536,7 @@ if (page.includes("checkout.html")) {
 
                         <div class="resumen-eventos-total">
                             <p>Total:</p>
-                            <p>${montoTotalEnCarrito()}</p>
+                            <p>S/ ${montoTotalEnCarrito()}</p>
                         </div>
                         <a class="btn-main" href="">Continuar compra</a>
                     </div>
@@ -564,7 +564,7 @@ if (page.includes("checkout.html")) {
             contenedorDetalleCart.innerHTML += 
             `
                     <div class="detalle-card-resumen">
-                        <p class="product-big">${nombre}</p>
+                        <p class="evento-name product-big">${nombre}</p>
                         <p class="evento-name product-small">${nombreCorto}</p>
                         <p>S/ ${precio}.00 </p>
                         <p>x${evento.cantidad}</p>
@@ -575,7 +575,7 @@ if (page.includes("checkout.html")) {
 
     imprimirDetalleCarrito()
 
-    /*Ocultamos la ventana de detalle extendida (large)*/
+    /*Ocultamos ymostramos la ventana de detalle extendida (large)*/
     
     let detalleLarge = document.getElementById("resumen-compra-large")
     let detalleShort = document.getElementById("resumen-compra-short")
@@ -599,7 +599,33 @@ if (page.includes("checkout.html")) {
         detalleShort.style.display="flex"
     })
 
+    /*================ Funcionalidad: borrar eventos del carrito ================ */
 
+    let iconDeleteEventoDeCarrito = document.getElementsByClassName("carrito-card-icon-container")
+    console.log(iconDeleteEventoDeCarrito)
+
+    for (let i = 0; i < iconDeleteEventoDeCarrito.length; i++) {
+        
+        console.log(iconDeleteEventoDeCarrito[i])
+
+        iconDeleteEventoDeCarrito[i].addEventListener("click", (e)=>{
+            e.preventDefault();
+            eliminarDelCarrito(i)
+        } )
+        
+    }
+
+    let eliminarDelCarrito = (id) =>{
+
+        carrito = carrito.filter((evento, posicion)=> posicion != id )
+    
+        localStorage.setItem("carritoInfo",JSON.stringify(carrito)) 
+
+        console.log("Mi carrito de eventos:")
+        console.log(JSON.parse(localStorage.getItem("carritoInfo")))
+
+        location.reload();
+    }
 }
 
 
