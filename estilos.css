@@ -1186,10 +1186,8 @@ select::placeholder{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Resumen de compra ~~~~~~~~~~*/
+/* &&&&&&&&&&&&&&&&&&&&&&&&&& VERSION CORTA*/
 
-#resumen-compra-large{
-    display: none;
-}
 
 .resumen-compra{
     width: 100%;
@@ -1206,14 +1204,13 @@ select::placeholder{
     border-top-right-radius: 10px;
     padding: 25px 25px;
 }
-
 .resumen-eventos{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.icon-container-up, .icon-container-down{
+.icon-container-up{
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -1229,9 +1226,20 @@ select::placeholder{
 }
 
 .icon-container-down{
-    display: none;
-    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--soft);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: -8%;
+    right: calc(50% - 25px);
+    padding: 8px;
+    cursor: pointer;
 }
+
 
 .resumen-eventos-total{
     display: flex;
@@ -1251,6 +1259,48 @@ select::placeholder{
 .arrow-up-icon, .icon-container-down{
     font-size: 20px;
 }
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&& VERSION EXTENDIDA*/
+
+#resumen-compra-large{
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--soft);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 25px 25px;
+}
+
+
+
+.cantidad-eventos{
+    text-align: start;
+    font-size: 20px;
+    color: var(--main-color);
+    font-weight: 800;
+}
+.detalle-card-resumen{
+    display: grid;
+    grid-template-columns: 3fr 1fr 0.5fr;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.detalle-card-resumen .evento-name{
+    text-align: start;
+}
+
+.eventos-detalle-container{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    border-bottom: 1px solid var(--main-color);
+}
+
 
 /*Pantallas medianas - tablet*/
 
