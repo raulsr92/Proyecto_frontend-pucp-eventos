@@ -422,7 +422,6 @@ if (page.includes("checkout.html")) {
 
     let imprimirCarrito = () =>{
         carrito.forEach((evento)=>{
-
             let eventoEnCarrito = objEventos.find((eventoBuscado)=>eventoBuscado.id == evento.id)
             console.log(eventoEnCarrito)
 
@@ -439,7 +438,7 @@ if (page.includes("checkout.html")) {
                             <div class="carrito-card-info-container">
                                 <h4 class="product-big">${nombre}</h4>
                                 <h4 class="product-small">${nombreCorto}</h4>
-                                <p>Teatro</p>
+                                <p>${categoria}</p>
                             </div>
                             <div class="carrito-card-icon-container">
                                 <i class="fa-solid fa-circle-xmark delete-icon"></i>
@@ -459,8 +458,30 @@ if (page.includes("checkout.html")) {
         })
 
     }
-        imprimirCarrito();
 
+    imprimirCarrito();
+
+    let cantidadEnCarrito =()=>{
+
+    }
+
+    let montoTotalEnCarrito =()=>{
+        let total=0;
+        carrito.forEach((evento)=>{
+                let eventoEnCarrito = objEventos.find((eventoBuscado)=>eventoBuscado.id == evento.id)
+                console.log(eventoEnCarrito)
+
+                /*Destructurando las propiedades necesarias del evento encontrado que cumpla con el ID del carrito*/ 
+                let {precio} =eventoEnCarrito
+
+                total += (evento.cantidad * eventoEnCarrito.precio) 
+                console.log(total)       
+            }
+        )
+        return total
+    }
+    
+    montoTotalEnCarrito()
 }
 
 
