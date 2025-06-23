@@ -517,10 +517,7 @@ if (page.includes("checkout.html")) {
 
     imprimirResumenSmall()
     
-    /*================Funcionalidad: Al hacer click en icono para expandir la ventana, ver detalle de compra (pantallas para móviles y tablets) ================*/
-
-    let iconExpandir = document.querySelector(".icon-container-up")
-    console.log(iconExpandir)
+    /*================Funcionalidad: Al hacer click en icono para expandir la ventana de detalle de compra se pueda ver su versión extendida (pantallas para móviles y tablets) ================*/
 
     let resumenCompraLarge = document.getElementById("resumen-compra-large")
 
@@ -578,6 +575,29 @@ if (page.includes("checkout.html")) {
 
     imprimirDetalleCarrito()
 
+    /*Ocultamos la ventana de detalle extendida (large)*/
+    
+    let detalleLarge = document.getElementById("resumen-compra-large")
+    let detalleShort = document.getElementById("resumen-compra-short")
+
+    let iconExpandir = document.querySelector(".icon-container-up")
+    console.log(iconExpandir)
+    let iconComprimir = document.querySelector(".icon-container-down")
+    console.log(iconComprimir)
+
+    detalleLarge.style.display="none"
+    detalleShort.style.display="flex"
+
+    iconExpandir.addEventListener("click",()=>{
+        detalleLarge.style.display="flex"
+        detalleShort.style.display="none"
+    })
+
+
+    iconComprimir.addEventListener("click",()=>{
+        detalleLarge.style.display="none"
+        detalleShort.style.display="flex"
+    })
 
 
 }
