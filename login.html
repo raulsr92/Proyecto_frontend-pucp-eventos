@@ -12,83 +12,51 @@
     <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-    <main class="grid-container">
-        <header class="header item" >
-            <nav>
+    <main id="grid-login" class="grid-container">
+        <header class="header2 item" style="background-color: white;" >
+            <nav class="navbar-register">
                 <div class="navbar-section1">
-                <a href="home.html">
-                    <img src="./img/logo1-sin-fondo.png" alt="logo-eventos" style="width: 200px;">
-                </a>
-                </div>
-
-                <div class="navbar-section2">
-                <input type="text" id="barra-filtro" placeholder="Encuentra eventos, lugares, organizadores, etc">
-                <i class="fa-solid fa-magnifying-glass icon-1-header"></i>
-                <i class="fa-solid fa-xmark icon-2-header"></i>
-                </div>
-
-                <div class="navbar-section3">
-                    <a href="">
-                    <i class="fa-solid fa-sack-dollar icon-3-header"></i>
-                    Precio
-                    </a>
-                    
-                    <a href="">
-                    <i class="fa-solid fa-layer-group icon-3-header"></i>
-                    Categorías
-                    </a>
-
-                    <a href="">
-                    <i class="fa-solid fa-location-dot icon-3-header"></i>
-                    Ciudad
-                    </a>
-
-                    <a href="">
-                    <i class="fa-solid fa-calendar-days icon-3-header"></i>
-                    Fechas
-                    </a>
-                </div>
-
-                <div class="navbar-section4">
-                    <a class="btn-main" href="login.html">
-                        Iniciar Sesión
-                    </a>
-
-                    <a class="btn-secondary" href="registrar.html" >
-                        Registrarse
+                    <a href="home.html">
+                        <img src="./img/logo3-sin-fondo.png" alt="logo-eventos" style="width: 250px;">
                     </a>
                 </div>
             </nav>
         </header>
 
-        <section class="menu item">
+        <section class="menu item menu-login">
             <h4>
             Menu
             </h4>
         </section>
 
-        <section class="principal item">
-            <div id="principalDiv">
-                <div>
-                    <i class="fa-solid fa-house fa-2xl"></i>
-                    <h2>Por favor ingrese</h2>
-                    <label for="newEmail">Dirección email</label>
-                    <input type="email" id="email" placeholder="Ingrese su email">
-                        <label for="newPassword" class="label2">Contraseña</label>
-                    <input type="password" id="password" placeholder="Contraseña">
-                    <div>
-                        <label>
-                            <input type="checkbox">Recordar datos   
-                        </label>
-                    </div>
-                    <button>Ingresar</button>
-                </div>
-                <h4>Si olvidaste tu contraseña <a href="">Haz click Aquí</a></h4>
-                <h4>Si no tienes cuenta, <a href="">registrate</a></h4>
+        <section class="principal item principal--login">
+          <a href="./home.html">Volver al inicio</a>  
+          <h1>Bienvenido a G2 Eventos</h1>
+
+          <!--  FOMURALI0 -->
+          <form id="formulario-user" class="form-registro" >
+            <div class="form-info">
+                <input id="nombre-input" class="register-input" type="text" placeholder="Tu correo electrónico" >
+
+                <input id="apellido-input" type="text" class="register-input" placeholder="Contraseña">
+
             </div>
+
+            <div class="form-forget">
+                <a class="form-forget-link" href="">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <input id="btn-registro-user" class="btn-main" type="submit" value="Ingresar">
+
+            <div class="form-to-register">
+                <p>¿No tienes una cuenta?</p>
+                <a class="form-to-register-link" href="./registrar.html">Registrate aquí</a>
+            </div>
+
+          </form> 
         </section>
 
-        <section class="contenido-adicional item">
+        <section class="contenido-adicional item container-background-image">
             <h4>
              Contenido adicional
           </h4>

@@ -201,7 +201,7 @@
     border-bottom: 4px solid white;
 }
 
-/*============================================================================ Estilos del Header (Pagina registro) ==============*/
+/*============================================================================ Estilos del Header (Pagina registro y login) ==============*/
 
 .navbar-register{
     display: flex;
@@ -890,7 +890,6 @@ select::placeholder{
 
 /* =========================== Página Registro ==================================== */
 
-
 .menu-registro{
    display: none; 
 }
@@ -899,10 +898,9 @@ select::placeholder{
    display: none; 
 }
 
-
 .principal--registro{
     padding: 0 20px;
-    margin: 20px 0;
+    margin: 20px 0 50px 0;
 }
 
 .principal--registro >a{
@@ -1050,6 +1048,53 @@ select::placeholder{
   margin-top: 5px;
 }
 /*-----------------------------------------------------------------*/
+
+/* =========================== Página Login ==================================== */
+
+.menu-login{
+   display: none; 
+}
+
+.principal--login{
+    padding: 0 20px;
+    margin: 20px 0 170px 0;
+}
+
+.principal--login >a{
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 800;
+    text-align: left;
+    text-decoration: none;
+}
+
+.principal--login >h1{
+    color: var(--secondary-color);
+    font-size: 34px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.form-forget{
+    text-align: end;
+}
+
+.form-to-register{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-forget-link, .form-to-register-link{
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--main-color);
+}
+
+.form-to-register > p{
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
 
 /* =========================== Página Carrito ==================================== */
 
@@ -1345,6 +1390,11 @@ select::placeholder{
         row-gap: 40px;
         padding: 70px 40px ;
     }
+    /* ================= Página Login */
+
+        .principal--login{
+            padding: 0 60px;
+        }
 
     /* =========================== Página Home ==================================== */
 
@@ -1478,6 +1528,22 @@ select::placeholder{
         padding: 50px 40px;
     }
 
+    /* ================= Página Login */
+
+    #grid-login{
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-areas: 
+            "header header contenido-adicional contenido-adicional "
+            "principal principal contenido-adicional contenido-adicional"
+            "footer footer footer footer"
+        ;
+    }
+
+    .principal--login{
+        padding: 0 100px;
+    }
+
     /* =========================== Página Home ==================================== */
 
     #grid-home{
@@ -1543,4 +1609,11 @@ select::placeholder{
     top: 5%;
     font-size: 16px;
 }
+
+    /* ================= Página Login */
+
+
+    .principal--login{
+        padding: 0 200px;
+    }
 }
