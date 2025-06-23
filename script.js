@@ -320,8 +320,8 @@ if (page.includes("checkout.html")) {
 
     let cardsContainer = document.querySelector(".cards-container");
 
-    let imprimirCards = ()=>{
-        objEventos.forEach((evento)=>{
+    let imprimirCards = (array)=>{
+        array.forEach((evento)=>{
             cardsContainer.innerHTML += 
             `
             <article class="event-card">
@@ -346,7 +346,7 @@ if (page.includes("checkout.html")) {
                     </div>
                     <div class="evento-info--cta">
                         <i class="fa-solid fa-heart icon-heart"></i>
-                        <a href="#" class="btn-carrito">
+                        <a href="#" class="btn-carrito" id="${evento.id}">
                             <i class="fa-solid fa-cart-plus"></i>
                             Agregar al carrito
                         </a>
@@ -357,7 +357,7 @@ if (page.includes("checkout.html")) {
         })
     }
 
-    imprimirCards()
+    imprimirCards(objEventos)
 
     console.log("en home.html")
 
@@ -371,30 +371,26 @@ if (page.includes("checkout.html")) {
 
     for (let i = 0; i < botonesCart.length; i++) {
         
-        console.log(botonesCart[i])
+        /*Imprimimos el ID de evento al que pertenece cada boton*/
+        console.log(botonesCart[i].id)
 
         botonesCart[i].addEventListener("click", (e)=>{
             e.preventDefault();
-            agregarAlCarrito(i)
+            let idEvento = botonesCart[i].id
+            agregarAlCarrito(idEvento)
         } )
         
     }
 
-    let agregarAlCarrito = (id) =>{
+    let agregarAlCarrito = (idEvento) =>{
 
-        console.log("Se hizo click en boton de agregar al carrito")
-        let selectedItem = id+1;
-        console.log(`Posicion de la card seleccionada: ${id}`)
-        console.log(`ID de evento seleccionado: ${selectedItem}`)
-        console.log(`Evento seleccionado: ${objEventos[id].nombre}`)
-
-        let busquedaEventoEnCarrito = carrito.find((event)=>event.id===selectedItem)
+        let busquedaEventoEnCarrito = carrito.find((event)=>event.id===idEvento)
         console.log(busquedaEventoEnCarrito)
 
         if(busquedaEventoEnCarrito === undefined){
             carrito.push(
                 {
-                    id: selectedItem,
+                    id: idEvento,
                     cantidad: 1,
                 }
             )
@@ -417,7 +413,7 @@ if (page.includes("checkout.html")) {
 
 
     let cantidadItemsEnCarrito =()=>{
-    let cantidad=0;
+        let cantidad=0;
         carrito.forEach((evento)=>{
 
             cantidad += evento.cantidad
@@ -436,6 +432,91 @@ if (page.includes("checkout.html")) {
 
     actualizarContadorEnCarrito()
 
+    /*================Funcionalidad: Filtrar por Categoria ================*/
+
+    /*Atrapar los checkbox*/
+    
+    let checkBoxFiltros = document.getElementsByClassName("checkBoxFiltroCate")  
+    console.log(checkBoxFiltros)  
+
+    let btnFiltar = document.querySelector(".btn-filtro-aplicar")
+    console.log(btnFiltar)
+
+    let categoriaPorFiltrar;
+
+
+    for (let i = 0; i < checkBoxFiltros.length; i++) {
+
+        console.log(checkBoxFiltros[i])
+
+
+        checkBoxFiltros[i].addEventListener("click", ()=>{
+
+                    /*Determinar el filtro a realizar*/ 
+            switch (i) {
+                case 0:
+                    categoriaPorFiltrar= "Conciertos"
+                    break;
+                case 1:
+                    categoriaPorFiltrar= "Teatro"
+                    break;  
+                case 2:
+                    categoriaPorFiltrar= "Stand up"
+                    break; 
+                case 3:
+                    categoriaPorFiltrar= "Deportes"
+                    break;  
+                case 4:
+                    categoriaPorFiltrar= "Circos"
+                    break;  
+                default:
+                    break;
+            }    
+            console.log(categoriaPorFiltrar)       
+        })  
+    }
+
+    
+
+    btnFiltar.addEventListener("click", ()=>{
+
+            if (categoriaPorFiltrar!=undefined) {
+                filtrarPorCategoria(categoriaPorFiltrar)
+
+
+            } else{
+                alert("No ha seleccionado ninguna categoría")
+            }
+    })
+
+        
+    let filtrarPorCategoria = (categoria)=>{
+        
+        let objEventosFiltrado = objEventos.filter((evento)=> evento.categoria == categoria)
+
+        console.log(objEventosFiltrado)
+
+        cardsContainer.innerHTML=""
+
+        imprimirCards(objEventosFiltrado)
+
+        let botonesCart = document.getElementsByClassName("btn-carrito")
+            console.log(botonesCart)
+
+        for (let i = 0; i < botonesCart.length; i++) {
+        
+            /*Imprimimos el ID de evento al que pertenece cada boton*/
+            console.log(botonesCart[i].id)
+
+            botonesCart[i].addEventListener("click", (e)=>{
+                e.preventDefault();
+                let idEvento = botonesCart[i].id
+                agregarAlCarrito(idEvento)
+        } )
+        
+    }
+
+    }
     
 
 
