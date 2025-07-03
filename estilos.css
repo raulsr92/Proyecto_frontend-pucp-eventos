@@ -21,6 +21,9 @@
   --input-background1: #f1f6f5;
   --soft:#F1F6F5;
   --soft2:#f0f0f0;
+  --alert-color: #dc3545;
+  --alert-color-hover: #9e1927;
+
 }
 
 .grid-container{
@@ -258,6 +261,7 @@
         font-size: 15px;
         letter-spacing: 0.6px;
         text-decoration: none;
+        text-align: center;
 }
 
 .btn-main:hover{
@@ -297,6 +301,25 @@
 .btn-terciary:hover{
         background-color: var(--third-color);
 }
+
+.btn-alert{
+        padding: 9px 26px;
+        border-radius: 20px;
+        background-color: var(--alert-color);
+        border: 0;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        text-decoration: none;
+        text-align: center;
+}
+
+.btn-alert:hover{
+        background-color: var(--alert-color-hover);
+}
+
 
 .btn-carrito{
         padding: 9px 15px;
@@ -522,6 +545,10 @@ select::placeholder{
 
 /* ====================================== Página Checkout ==================================== */
 
+#grid-checkout{
+    position: relative;
+}
+
 /*Menu*/
 #menu-checkout{
     display: flex;
@@ -589,7 +616,7 @@ select::placeholder{
     padding-top: 20px;
 }
 
-/* **************************Checkout:Primera Sección del main*/
+/* **************************Checkout:Primera Sección de Principal > Sección de participantes*/
 
 .principal{
     background-color: white;
@@ -759,7 +786,6 @@ select::placeholder{
 
 /***************** FIN: Editando la flechita de un elemento SELECT ¨***************/
 
-
 .container-doc-search{
     position: relative;
 }
@@ -793,7 +819,7 @@ select::placeholder{
     border-bottom: 4px solid var(--variant-color-main);
 }
 
-/* *******************************Segunda Sección del main*/
+/* **************************Checkout:Segunda Sección de Principal > Resumen de compra: short y large*/
 
 #asistente-precuenta{
     border-left: 2px solid var(--variant-color-main) ;
@@ -842,23 +868,18 @@ select::placeholder{
 }
 
 
+
+/* **************************Checkout:Tercea Sección de Principal > Método de pago*/
+
 #asistente-info-mediopago{
-    border: 2px solid var(--variant-color-main);
-    border-radius: 10px;
-    padding: 20px 10px ;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+    display: none;
 }
 
 
+/* **************************Checkout:Cuarta Sección de Principal > Pago*/
+
 #asistente-datos-mediopago{
-    border: 2px solid var(--variant-color-main);
-    border-radius: 10px;
-    padding: 20px 10px ;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+    display: none;
 }
 
 

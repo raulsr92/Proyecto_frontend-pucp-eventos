@@ -142,6 +142,152 @@ if (page.includes("checkout.html")) {
             autocompletarUsuario(dniUser.value); // Llamamos la función con ese valor
         })
 
+    /*================Funcionalidad: Imprimir ventana de total a pagar en pantallas de móviles y tablets ================*/
+
+
+    console.log(carrito)
+    console.log("En página carrito")
+
+    let cantidadItemsEnCarrito =()=>{
+        let cantidad=0;
+        carrito.forEach((evento)=>{
+
+            cantidad += evento.cantidad
+
+        })
+        console.log(cantidad)
+
+        return cantidad
+    }
+
+    let montoTotalEnCarrito =()=>{
+        let total=0;
+        carrito.forEach((evento)=>{
+                let eventoEnCarrito = objEventos.find((eventoBuscado)=>eventoBuscado.id == evento.id)
+                console.log(eventoEnCarrito)
+
+                /*Destructurando las propiedades necesarias del evento encontrado que cumpla con el ID del carrito*/ 
+                let {precio} =eventoEnCarrito
+
+                total += (evento.cantidad * precio) 
+                console.log(total)       
+            }
+        )
+        console.log(total)
+        return total
+    }
+
+    
+    let resumenCompraSmall = document.getElementById("resumen-compra-short")
+    console.log("resumen en checkout")
+    console.log(resumenCompraSmall)
+
+
+    let imprimirResumenSmall = ()=>{
+        resumenCompraSmall.innerHTML= 
+        `
+                <div class="resumen-container">
+                    <div class="resumen-eventos">
+                        <div class="resumen-eventos-total">
+                            <p>Total:</p>
+                            <p>S/ ${montoTotalEnCarrito()}</p>
+                        </div>
+                        <a class="btn-alert" href="./checkout.html">Continuar compra</a>
+                    </div>
+                    <div class="icon-container-up">
+                        <i class="fa-solid fa-chevron-up arrow-up-icon"></i>
+                    </div>
+                </div> 
+        `
+    }
+
+    imprimirResumenSmall()
+    
+    /*============ Funcionalidad: Al hacer click en icono para expandir la ventana de detalle de compra se pueda ver su versión extendida (pantallas para móviles y tablets) ================*/
+
+    let resumenCompraLarge = document.getElementById("resumen-compra-large")
+
+    let imprimirResumenLarge = ()=>{
+        resumenCompraLarge.innerHTML= 
+        `
+                <div class="resumen-container">
+                    <div class="resumen-eventos">
+                        <div class="cantidad-eventos">
+                            <p>Eventos (${cantidadItemsEnCarrito()})</p>
+                        </div>
+
+                        <div class="eventos-detalle-container">
+                      
+                        </div>
+
+                        <div class="resumen-eventos-total">
+                            <p>Total:</p>
+                            <p>S/ ${montoTotalEnCarrito()}</p>
+                        </div>
+                        <a class="btn-alert" href="">Continuar compra</a>
+                    </div>
+                    <div class="icon-container-down">
+                        <i class="fa-solid fa-chevron-down arrow-down-icon"></i>
+                    </div>
+                </div>
+        `
+    }
+    
+
+    imprimirResumenLarge()
+
+    /*Imprimimos el detalle de la compra en una nueva iteración */ 
+
+    let contenedorDetalleCart = document.querySelector(".eventos-detalle-container")
+    console.log(contenedorDetalleCart)
+
+    let imprimirDetalleCarrito = () =>{
+        carrito.forEach((evento)=>{
+
+            let eventoEnCarrito = objEventos.find((eventoBuscado)=>eventoBuscado.id == evento.id)
+            console.log(eventoEnCarrito)
+
+            /*Destructurando las propiedades necesarias del evento encontrado que cumpla con el ID del carrito*/ 
+            let {nombre,nombreCorto,precio} =eventoEnCarrito
+            
+            contenedorDetalleCart.innerHTML += 
+            `
+                    <div class="detalle-card-resumen">
+                        <p class="evento-name product-big">${nombre}</p>
+                        <p class="evento-name product-small">${nombreCorto}</p>
+                        <p>S/ ${precio}.00 </p>
+                        <p>x${evento.cantidad}</p>
+                    </div>   
+            `
+        })
+    } 
+
+    imprimirDetalleCarrito()
+
+    /*Ocultamos y mostramos la ventana de detalle extendida (large)*/
+    
+    let detalleLarge = document.getElementById("resumen-compra-large")
+    let detalleShort = document.getElementById("resumen-compra-short")
+
+    let iconExpandir = document.querySelector(".icon-container-up")
+    console.log(iconExpandir)
+    let iconComprimir = document.querySelector(".icon-container-down")
+    console.log(iconComprimir)
+
+    detalleLarge.style.display="none"
+    detalleShort.style.display="flex"
+
+    iconExpandir.addEventListener("click",()=>{
+        detalleLarge.style.display="flex"
+        detalleShort.style.display="none"
+    })
+
+
+    iconComprimir.addEventListener("click",()=>{
+        detalleLarge.style.display="none"
+        detalleShort.style.display="flex"
+    })
+
 
 
 } else if (page.includes("registrar.html")) {
@@ -643,7 +789,7 @@ if (page.includes("checkout.html")) {
     imprimirCarrito();
 
 
-    /*================Funcionalidad: Imprimir ventana de total a pagar en pantallas de móviles y tables ================*/
+    /*================Funcionalidad: Imprimir ventana de total a pagar en pantallas de móviles y tablets ================*/
 
 
     let cantidadItemsEnCarrito =()=>{
@@ -756,7 +902,7 @@ if (page.includes("checkout.html")) {
 
     imprimirDetalleCarrito()
 
-    /*Ocultamos ymostramos la ventana de detalle extendida (large)*/
+    /*Ocultamos y mostramos la ventana de detalle extendida (large)*/
     
     let detalleLarge = document.getElementById("resumen-compra-large")
     let detalleShort = document.getElementById("resumen-compra-short")
