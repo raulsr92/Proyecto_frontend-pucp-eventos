@@ -213,6 +213,34 @@
     padding: 20px 0;
 }
 
+/*============================================================================ Estilos del Header (Pagina Checkout) ==============*/
+
+.navbar-checkout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--soft);
+    border-bottom: 1px solid var(--icons-color);
+    padding-right: 10px;
+}
+
+.navnar-icons-checkout{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.navnar-icons-checkout .icon-user{
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+.navnar-icons-checkout .icon-arrow-down-nav{
+    font-size: 10px;
+    color: var(--secondary-color);
+}
+
+
 
 /* =========================== Mis Botones ==================================== */
 .btn-main{
@@ -485,6 +513,12 @@ select::placeholder{
 
 
 /* =========================== Página Checkout ==================================== */
+
+/*Menu*/
+#menu-checkout{
+    display: flex;
+    flex-direction: column;
+}
 
 /* *******************************Primera Sección del main*/
 
@@ -1373,6 +1407,25 @@ select::placeholder{
 
     .navbar-section3{
         column-gap: 35px;
+    }
+
+    /* ================= Página checkout */
+
+    #grid-checkout{
+        grid-template-areas: 
+            "header header "
+            "menu menu"
+            "principal principal "
+            "footer footer "
+        ;
+    }
+
+    .header2{
+        grid-area: header;
+    }
+
+    .navbar-checkout{
+        padding: 0px 20px;
     }
 
     /* Estilos de Footer */

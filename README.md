@@ -2,7 +2,8 @@
 
 Proyecto de eventos en la ciudad de Lima
 
-✅ Páginas referentes: 
+### Páginas referentes: 
+
 |Página             |Enlace         |
 |----------------|-------------------------------|
 |Joinnus|[Ver 👀](https://www.joinnus.com/)       |
@@ -10,12 +11,12 @@ Proyecto de eventos en la ciudad de Lima
 |Inkafarma|[Ver 👀](https://inkafarma.pe/)     
 |Falabella|[Ver 👀](https://www.falabella.com.pe/)       |
 
-✅ Integrantes y división del trabajo:
+### Integrantes y división del trabajo:
 
 Trabajaron en la entrega del día 22/06/25: Raúl, Fredy, Alex, Diego
 
 
-✅ Filtros escogidos:
+### Filtros escogidos:
 
 
 |N° | Filtro  |
@@ -25,8 +26,9 @@ Trabajaron en la entrega del día 22/06/25: Raúl, Fredy, Alex, Diego
 |3 | Filtro por Fecha 
 
 
-Documentación
-✅Error N° 01 solucionado: Cuando hacía el filtrado y volvía a imprimir las cards, ya no podia agregar eventos al carrito
+### Solución de Errores:
+
+🚩Error N° 01 solucionado: Cuando hacía el filtrado y volvía a imprimir las cards, ya no podia agregar eventos al carrito
 Solución: 
 El problema ocurre porque cuando filtras por categoría y vuelves a imprimir las tarjetas (imprimirCards(objEventosFiltrado)), los nuevos botones de "Agregar al carrito" no tienen los event listeners asignados nuevamente.
 
