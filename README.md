@@ -25,6 +25,12 @@ Trabajaron en la entrega del día 22/06/25: Raúl, Fredy, Alex, Diego
 |2 | Filtro por Lugar |
 |3 | Filtro por Fecha 
 
+### Funcionalidades elaboradas:
+
+|N° | Ffuncionalidad |
+|----------------|-------------------------------|
+|1 | Se imprimien las cards desde JavaScript. Los eventos se almacenan en el objeto "objEventos". El array se recorre con el método forEach( )    |
+|2 | Agregar productos al carrito de compras: se ha creado una colección con los botones de "agregar al carrito" de cada card que tienen como propiedad "id" al ID de cada evento, esto para que cada botón quede relacionado con su respectivo evento. Con for se recorren estos botones y se genera el evento click, lo cual detona la función que agrega al carrito que recibe como parámetro ese ID que representa a cada evento. Con el método de los arrays FIND buscamos en el objeto de "carrito de compra" un evento que conincida en su id con el id del boton de agregar al carrto, en pocas palabras estamos buscando si ese evento que estamos agregando ya se encuentra en el carrito. Si es "undefined" significa que es la primera vez que se agrega ese evento al carrito, por lo tanto se agrega al mismo. Por el contrario, si ya existía ese evento en el carrito, solo se suma 1 a la cantidad. La función termina llamando a la f actualizarContadorCarrito(), la que actualiza el valor de elementos en el carrito en total, lo cual se muestra en el boton flotante de home.html|
 
 ### Solución de Errores:
 
