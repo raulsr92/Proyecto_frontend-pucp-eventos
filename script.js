@@ -102,6 +102,9 @@ console.log(carrito)
 let objUsers = JSON.parse(localStorage.getItem("users")) || [];
 console.log(objUsers)
 
+let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioSesion")) || [];
+console.log(usuarioEnSesion)
+
 const page = window.location.pathname;
 
 if (page.includes("checkout.html")) {
@@ -303,7 +306,7 @@ if (page.includes("checkout.html")) {
         {
             nombre: "Colombia",
             capital: "Bogotá",
-            value: "colonbia",
+            value: "colombia",
         },
         {
             nombre: "Argentina",
@@ -419,7 +422,7 @@ if (page.includes("checkout.html")) {
         if(existeCorreo){
             alert(`El correo ${emailUser} ya ha sido registrado `);
 
-            document.getElementById("formulario-user").reset()
+            /*document.getElementById("formulario-user").reset()*/
             return
         }
 
@@ -431,7 +434,7 @@ if (page.includes("checkout.html")) {
         if (!checkbox1.checked || !checkbox2.checked ) {
             alert("Tiene que leer y aceptar los terminos y condiciones y la politica de tratamiento de datos antes de registrarse ")
             
-            document.getElementById("formulario-user").reset()
+            /*document.getElementById("formulario-user").reset()*/
             return
         }
 
@@ -478,7 +481,7 @@ if (page.includes("checkout.html")) {
 
     let iniciarSesion = ()=>{
         
-        console.log("ha intendao iniciar sesión")
+        console.log("ha intentado iniciar sesión")
 
         /*Capturar correo, contraseña y boton ingresar*/
         let infoCorreoLogin = document.querySelector(".correo-login")
@@ -489,7 +492,6 @@ if (page.includes("checkout.html")) {
         /*Encontrar usuario mediante su correo*/ 
 
         try {
-
             /*Obtener los valores ingresados por el usuario a traves de la propiedad value de cada input*/ 
             let correoLogin = infoCorreoLogin.value.trim()
             console.log(correoLogin)
@@ -521,7 +523,34 @@ if (page.includes("checkout.html")) {
                     throw new Error("Su contraseña es incorrecta  ⚠")
                 } else{
 
+                    //Utilizamos la variable "usuarioExiste" para guardar al usuario en el objeto usuario en sesión
+
+                
+                        usuarioEnSesion.push(
+                            {
+                                id: usuarioExiste.id,
+                                nombre: usuarioExiste.nombre,
+                                apellidos: usuarioExiste.apellidos,
+                                dni: usuarioExiste.dni,
+                                correo: usuarioExiste.correo,
+                                password: usuarioExiste.password,
+                                pais: usuarioExiste.pais,
+                                sexo: usuarioExiste.sexo,
+                            }
+                        )
+
+                        console.log(usuarioEnSesion)
+
+                    
+                    localStorage.setItem("usuarioSesion",JSON.stringify(usuarioEnSesion))
+                    let usuarioEnSesionVerificacion = JSON.parse(localStorage.getItem("usuarioSesion"));
+                    console.log(usuarioEnSesionVerificacion)
+
+                    console
+
                     alert("!Bienvenido!💚")
+
+                    
                     window.location.href = "home.html"
                 } 
                 
