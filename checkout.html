@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./estilos.css">
-
+    <link rel="stylesheet" href="./assets/icofont/icofont.min.css">
 </head>
 <body>  
     <main id="grid-checkout" class="grid-container">
@@ -60,59 +60,83 @@
                     <h3>Datos de los asistentes</h3>
                 </div>
                 <div id="asistente-info">
-                    <div>
+                    <div class="asistente-info-1">
                         <div>
                             <i class="fa-solid fa-circle-user"></i>
-                            <h4>Asistente 1</h4>
+                            <h4>Asistente #1</h4>
                         </div> 
                         <i class="fa-solid fa-chevron-up"></i>
                     </div>
-                    <p>Tipo de entradas</p>
-                    <p>Sur</p>
-                    <span>Completar con mis datos</span>
-                    <form class="asistente-info--formulario" action="">
+                    <div class="asistente-info-2">
                         <div>
-                            <label for="pais">País*</label>
-                            <select name="pets" id="pais" class="form-input">
-                                <option value="peru">Peru</option>
-                                <option value="ecuador">Ecuador</option>
-                                <option value="colombia">Colombia</option>
-                            </select>
+                            <p>Tipo de entrada</p>
+                            <p>Sur</p>
+                            <span>Completar con mis datos</span>
                         </div>
 
-                        <div>
-                            <label for="doc">Tipo de Documento*</label>
-                            <select name="pets" id="doc" class="form-input">
-                                <option value="peru">DNI</option>
-                                <option value="ecuador">Pasaporte</option>
-                                <option value="colombia">Carnet de Extranjería</option>
-                            </select>
-                        </div>
-
-                        <div >
-                            <label for="numero-doc">N° de documento*</label>
-                            <div class="container-doc-search">
-                                <input type="text" id="numero-doc" class="form-input">
-                                
-                                <a id="form-icon-lupa--container" >
-                                    <i class="fa-solid fa-magnifying-glass form-icon-lupa"></i>
-                                </a>
-                                
+                        <form class="asistente-info--formulario" action="">
+                            <div>
+                                <label for="pais">País*</label>
+                                <select name="pais" id="pais" class="form-input">
+                                    <option value="peru">Peru</option>
+                                    <option value="ecuador">Ecuador</option>
+                                    <option value="colombia">Colombia</option>
+                                </select>
+                                <i class="icofont-caret-up icon-arrow-up"></i>
+                                <i class="icofont-caret-down icon-arrow-down"></i>
                             </div>
-                        </div>
 
-                        <div>
-                            <label for="nombre">Nombre*</label>
-                            <input type="text" placeholder="Nombres" id="nombre" class="form-input">
-                        </div>
+                            <div>
+                                <label for="doc">Tipo de Documento*</label>
+                                <select name="tipoDocumento" id="doc" class="form-input">
+                                    <option value="peru">DNI</option>
+                                    <option value="ecuador">Pasaporte</option>
+                                    <option value="colombia">Carnet de Extranjería</option>
+                                </select>
+                                <i class="icofont-caret-up icon-arrow-up"></i>
+                                <i class="icofont-caret-down icon-arrow-down"></i>
+                            </div>
 
-                        <div>
-                            <label for="apellidos">Apellido*</label>
-                            <input type="text" placeholder="Apellidos" id="apellidos" class="form-input">
-                        </div>
+                            <div >
+                                <label for="numero-doc">N° de documento*</label>
+                                <div class="container-doc-search">
+                                    <input type="text" id="numero-doc" class="form-input" name="nrodoc" placeholder="N° de documento">
+                                    
+                                    <a id="form-icon-lupa--container" >
+                                        <i class="fa-solid fa-magnifying-glass form-icon-lupa"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
 
-                        <button type="submit" class="btn-terciary"> Guardar</button>
-                    </form>
+                            <div>
+                                <label for="nombre">Nombre*</label>
+                                <input type="text" placeholder="Nombres" id="nombre" class="form-input" name="nombre">
+                            </div>
+
+                            <div>
+                                <label for="apellidos">Apellido*</label>
+                                <input type="text" placeholder="Apellidos" id="apellidos" class="form-input" name="apellido">
+                            </div>
+
+                            <div>
+                                <label for="sexo">Sexo*</label>
+                                <select name="sexo" id="sexo" class="form-input">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                </select>
+                                <i class="icofont-caret-up icon-arrow-up"></i>
+                                <i class="icofont-caret-down icon-arrow-down"></i>
+                            </div>
+
+                            <div>
+                                <a href="">Limpiar</a>
+                                <button type="submit" class="btn-terciary"> Guardar</button>
+
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </section>
 

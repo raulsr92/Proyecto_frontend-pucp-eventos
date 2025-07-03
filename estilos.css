@@ -17,6 +17,7 @@
   --variant-color-secondary: #312F32;
   --third-color: #258c77;
   --icons-color: #888888;
+  --border-color1: #bcd1e7;
   --input-background1: #f1f6f5;
   --soft:#F1F6F5;
   --soft2:#f0f0f0;
@@ -190,6 +191,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: white;
     text-decoration: none;
     font-size: 12px;
@@ -200,6 +202,7 @@
 
 .navbar-section3 a:hover{
     border-bottom: 4px solid white;
+    
 }
 
 /*============================================================================ Estilos del Header (Pagina registro y login) ==============*/
@@ -289,6 +292,10 @@
         cursor: pointer;
         font-size: 15px;
         letter-spacing: 0.6px;
+}
+
+.btn-terciary:hover{
+        background-color: var(--third-color);
 }
 
 .btn-carrito{
@@ -513,7 +520,7 @@ select::placeholder{
 
 
 
-/* =========================== Página Checkout ==================================== */
+/* ====================================== Página Checkout ==================================== */
 
 /*Menu*/
 #menu-checkout{
@@ -582,18 +589,7 @@ select::placeholder{
     padding-top: 20px;
 }
 
-.participantes-section >div{
-   background-color: white; 
-
-}
-
-.participantes-section >div > h3{
-    font-size: 15px;
-    font-weight: 900;
-    padding: 15px 0px 15px 22px;
-}
-
-/* *******************************Primera Sección del main*/
+/* **************************Checkout:Primera Sección del main*/
 
 .principal{
     background-color: white;
@@ -608,54 +604,81 @@ select::placeholder{
     padding: 0px 20px
 }
 
-.participantes-section > p{
-    align-self: self-start;
-    font-size: 14px;
+.participantes-section >div{
+   background-color: white; 
+
 }
 
-.participantes-section > h3{
-    text-align: start;
+.participantes-section >div > h3{
+    font-size: 15px;
+    font-weight: 900;
+    padding: 15px 0px 15px 22px;
 }
 
 #asistente-info{
-    border: 2px solid var(--variant-color-main);
+    /*border: 2px solid var(--variant-color-main);*/
     border-radius: 10px;
-    padding: 20px 10px ;
+    padding: 20px 14px ;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    box-shadow: 0px 1px 3px 1px rgba(150, 167, 185, .4), 0 1px 2px  rgba(150, 167, 185, .7);
 }
-#asistente-info>div{
+
+.asistente-info-1{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#asistente-info>div>div{
+.asistente-info-1>div{
     display: flex;
     align-items: center;
-    column-gap: 5px;
+    column-gap: 7px;
+    color: var(--variant-color-secondary);
 }
 
-#asistente-info p:nth-child(2){
-    align-self: start;
+.asistente-info-1>div>i{
+    font-size: 18px;
+}
+
+.asistente-info-1>i{
     font-size: 14px;
 }
 
-#asistente-info p:nth-child(3){
-    align-self: start;
-    font-size: 17px;
-    font-weight: 700;
-    text-transform: uppercase;
+.asistente-info-2{
+    display: flex;
+    flex-direction: column;
 }
 
-#asistente-info >span{
-    align-self: start;
-    font-size: 13px;
-    border: 1px solid var(--icons-color);
+.asistente-info-2>div{
     display: flex;
-    padding: 3px 8px;
-    border-radius: 5px;
+    flex-direction: column;
+    padding-bottom: 30px;
+    row-gap: 5px;
+}
+
+.asistente-info-2>div> p:nth-of-type(1){
+    font-size: 11px;
+    color: var(--variant-color-secondary);
+    font-weight: 500;
+   
+}
+
+.asistente-info-2>div> p:nth-of-type(2){
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+}
+.asistente-info-2>div> span{
+    font-size: 13px;
+    border: 1px solid var(--border-color1);
+    padding: 6px 4px;
+    border-radius: 8px;
+    font-weight: 500;
+    align-self: self-start;
+
 }
 
 .asistente-info--formulario{
@@ -664,27 +687,78 @@ select::placeholder{
     row-gap: 15px;
 }
 
-.asistente-info--formulario div{
+.asistente-info--formulario > div:nth-of-type(1),.asistente-info--formulario > div:nth-of-type(2),.asistente-info--formulario > div:nth-of-type(3),.asistente-info--formulario > div:nth-of-type(4),.asistente-info--formulario > div:nth-of-type(5),.asistente-info--formulario > div:nth-of-type(6){
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 6px;
 }
 
-.asistente-info--formulario div label{
-    font-size: 15px;
+
+.asistente-info--formulario > div> label{
+    font-size: 11px;
+    color: var(--variant-color-secondary);
 }
 
-.form-input{
+.asistente-info--formulario .form-input{
     width: 100%;
-    padding: 10px 15px 10px 40px;
+    padding: 10px 0px 10px 10px;
     border-radius: 10px;
     outline: 0;
-    /*border: 1px solid var(--icons-color);*/
+    background-color: white;
+    border: 1px solid var(--icons-color); 
+}
+
+.asistente-info--formulario .form-input::placeholder{
+    font-size: 13px;
 }
 
 .asistente-info--formulario div label{
     align-self: self-start;
 }
+
+.asistente-info--formulario >div:nth-of-type(7){
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.asistente-info--formulario >div:nth-of-type(7)>a{
+    text-decoration: none;
+    color: var(--variant-color-secondary);
+}
+
+.asistente-info--formulario >div:nth-of-type(7)>a:hover{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/***************** INICIO: Editando la flechita de un elemento SELECT ¨***************/
+.asistente-info--formulario >div select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.asistente-info--formulario > div:nth-of-type(1),.asistente-info--formulario > div:nth-of-type(2), .asistente-info--formulario > div:nth-of-type(6){
+    position: relative;
+}
+
+.asistente-info--formulario > div:nth-of-type(1) .icon-arrow-up, .asistente-info--formulario > div:nth-of-type(2) .icon-arrow-up,.asistente-info--formulario > div:nth-of-type(6) .icon-arrow-up{
+    position: absolute;
+    top: 42%;
+    right: 3%;
+}
+
+.asistente-info--formulario > div:nth-of-type(1) .icon-arrow-down, .asistente-info--formulario > div:nth-of-type(2) .icon-arrow-down,.asistente-info--formulario > div:nth-of-type(6) .icon-arrow-down{
+    position: absolute;
+    bottom: 15%;
+    right: 3%;
+}
+
+/***************** FIN: Editando la flechita de un elemento SELECT ¨***************/
+
 
 .container-doc-search{
     position: relative;
