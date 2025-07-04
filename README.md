@@ -7,9 +7,7 @@ Proyecto de eventos en la ciudad de Lima
 |Página             |Enlace         |
 |----------------|-------------------------------|
 |Joinnus|[Ver 👀](https://www.joinnus.com/)       |
-|Teleticket|[Ver 👀](https://teleticket.com.pe/)       |
-|Inkafarma|[Ver 👀](https://inkafarma.pe/)     
-|Falabella|[Ver 👀](https://www.falabella.com.pe/)       |
+
 
 ### Integrantes y división del trabajo:
 
@@ -30,7 +28,7 @@ Trabajaron en la entrega del día 22/06/25: Raúl, Fredy, Alex, Diego
 |N° | Ffuncionalidad |
 |----------------|-------------------------------|
 |1 | **Registro de usuarios:** Los usuarios se pueden registrar en la página registral.html. Estos usuarios se van a almacenar en el localStorage como "users"   |
-|1 | **Login:** Los usuarios inician sesión cuando se verifica que ambos campos (correo y password) estén llenos y también se valida que el usuario exista a través del correo registrado. Si el usuario exista se valida que la contraseña sea la almacenada. Si usuario y contraseña con correctos se muestra un mensaje de bienvenida y se redirige al usuario al HOME. Cuando un usuario inicia sesión, se almacena en el objeto de local Storage "usuarioSesion"   |
+|2 | **Login:** Los usuarios inician sesión cuando se verifica que ambos campos (correo y password) estén llenos y también se valida que el usuario exista a través del correo registrado. Si el usuario exista se valida que la contraseña sea la almacenada. Si usuario y contraseña con correctos se muestra un mensaje de bienvenida y se redirige al usuario al HOME. Cuando un usuario inicia sesión, se almacena en el objeto de local Storage "usuarioSesion"   |
 |3 | **Se imprimien las cards de eventos desde JavaScript:** Los eventos se almacenan en el objeto "objEventos". El array se recorre con el método forEach( )    |
 |4 | **Agregar productos al carrito de compras:** se ha creado una colección con los botones de "agregar al carrito" de cada card que tienen como propiedad "id" al ID de cada evento, esto para que cada botón quede relacionado con su respectivo evento. Con for se recorren estos botones y se genera el evento click, lo cual detona la función que agrega al carrito que recibe como parámetro ese ID que representa a cada evento. Con el método de los arrays FIND buscamos en el objeto de "carrito de compra" un evento que conincida en su id con el id del boton de agregar al carrto, en pocas palabras estamos buscando si ese evento que estamos agregando ya se encuentra en el carrito. Si es "undefined" significa que es la primera vez que se agrega ese evento al carrito, por lo tanto se agrega al mismo. Por el contrario, si ya existía ese evento en el carrito, solo se suma 1 a la cantidad. La función termina llamando a la f actualizarContadorCarrito(), la que actualiza el valor de elementos en el carrito en total, lo cual se muestra en el boton flotante de home.html |
 |5 | **Filtar por categoría:** Recorremos los Radio input de cada categoría en el filtro (que están ocultos) y les aplicamos que escuchen el evento click. Si una categoría es seleccionada (click) para filtrado, se llena la variable "categoriaPorFiltrar" con la categoría correspondiente. Ahora escuchamos el evento click del botón "Aplicar", si no se seleccionó ninguna categoría, sale una alerta que indica ello, pero caso contrario se ejecuta la f filtrarPorCategoria que recibe como argumento la categoría. En esta función utilizamos el método FILTER de los arrays, los cuales nos devolverá el evento o los eventos que coincidan con el nombre de la categoría. ANtes de volver a imprimir los eventos filtrados, limpiamos todas las cards y repetimos el paso para detectar qué evento se ha agregado el carrito |

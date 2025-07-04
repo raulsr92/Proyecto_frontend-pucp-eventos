@@ -765,7 +765,57 @@ if (page.includes("checkout.html")) {
 
     }
     
+    /*================Funcionalidad: Cambios en cabecera al iniciar sesión ================*/
 
+        let sectionFourNavbar = document.querySelector(".navbar-section4")
+        console.log(sectionFourNavbar)
+        let sectionFiveNavbar = document.querySelector(".navbar-section5")
+
+        //capturar al navbar
+
+        let navbarMain = document.getElementById("navBar-main")
+        console.log(navbarMain)
+
+        sectionFourNavbar.style.display="flex"
+        sectionFiveNavbar.style.display="none"
+
+        // media queries
+        const mediaGrande = window.matchMedia("(min-width: 801px)");
+        const mediaMediana = window.matchMedia("(min-width: 501px) and (max-width: 800px)")
+        
+    if (usuarioEnSesion) {
+
+        sectionFourNavbar.style.display="none"
+        sectionFiveNavbar.style.display="flex"
+
+        navbarMain.classList.remove("navbarSinSesion")
+
+        let estadoActual = "";
+
+        function manejarCambio(e) {
+            let nuevoEstado = "";
+            if (mediaGrande.matches) {
+                nuevoEstado = "grande";
+            } else if (mediaMediana.matches) {
+                nuevoEstado = "mediana";                
+                
+            } else {
+                nuevoEstado = "pequeña";         
+            }
+            if (nuevoEstado !== estadoActual) {
+                console.log(`Pantalla ${nuevoEstado}`);
+                estadoActual = nuevoEstado;
+            }
+        }
+
+        manejarCambio();
+
+
+        // Escuchar cambios en el tamaño
+        mediaGrande.addEventListener("change", manejarCambio);
+        mediaMediana.addEventListener("change", manejarCambio);
+
+    }
 
 } else if (page.includes("carritoDeCompras.html")){
 
