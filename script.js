@@ -766,56 +766,78 @@ if (page.includes("checkout.html")) {
     }
     
     /*================Funcionalidad: Cambios en cabecera al iniciar sesión ================*/
-
-        let sectionFourNavbar = document.querySelector(".navbar-section4")
-        console.log(sectionFourNavbar)
-        let sectionFiveNavbar = document.querySelector(".navbar-section5")
-
-        //capturar al navbar
-
-        let navbarMain = document.getElementById("navBar-main")
-        console.log(navbarMain)
-
-        sectionFourNavbar.style.display="flex"
-        sectionFiveNavbar.style.display="none"
-
-        // media queries
-        const mediaGrande = window.matchMedia("(min-width: 801px)");
-        const mediaMediana = window.matchMedia("(min-width: 501px) and (max-width: 800px)")
         
-    if (usuarioEnSesion) {
+        //Dibujar la seccion 5 del header desde JS PARA PONER EL NOMBRE del que inició sesió
 
-        sectionFourNavbar.style.display="none"
-        sectionFiveNavbar.style.display="flex"
+        
 
-        navbarMain.classList.remove("navbarSinSesion")
+        function actualizarEstadoNavbar() {
 
-        let estadoActual = "";
+            //Capturamos las secciones necesarias y el navbar
+            let sectionFourNavbar = document.querySelector(".navbar-section4")
+            console.log(sectionFourNavbar)
+            let sectionFiveNavbar = document.querySelector(".navbar-section5")
+            console.log(sectionFiveNavbar)
+            let navbarMain = document.getElementById("navBar-main")
+            console.log(navbarMain)
 
-        function manejarCambio(e) {
-            let nuevoEstado = "";
-            if (mediaGrande.matches) {
-                nuevoEstado = "grande";
-            } else if (mediaMediana.matches) {
-                nuevoEstado = "mediana";                
-                
-            } else {
-                nuevoEstado = "pequeña";         
-            }
-            if (nuevoEstado !== estadoActual) {
-                console.log(`Pantalla ${nuevoEstado}`);
-                estadoActual = nuevoEstado;
+            let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioSesion")) 
+            console.log(usuarioEnSesion)
+            const volverSinSesion = localStorage.getItem("volverSinSesion")
+            console.log(volverSinSesion)
+
+            if(usuarioEnSesion){
+                sectionFourNavbar.style.display="none"
+                sectionFiveNavbar.style.display="flex"
+                navbarMain.classList.remove("navbarSinSesion")
+                navbarMain.classList.add("navbarEnSesion")
+            } else if(volverSinSesion === "true"){
+                sectionFourNavbar.style.display="flex"
+                sectionFiveNavbar.style.display="none"
+                navbarMain.classList.add("navbarSinSesion")
+                navbarMain.classList.remove("navbarEnSesion")
+                localStorage.removeItem("volverSinSesion")
+
+            } else{
+                sectionFourNavbar.style.display = "flex";
+                sectionFiveNavbar.style.display = "none";
+                navbarMain.classList.remove("navbarEnSesion");
+                navbarMain.classList.add("navbarSinSesion");
             }
         }
+            
 
-        manejarCambio();
+        window.addEventListener("DOMContentLoaded", ()=>{
+                actualizarEstadoNavbar()
+            })
+    /*================Funcionalidad: Cerrar Sesion ================*/
 
 
-        // Escuchar cambios en el tamaño
-        mediaGrande.addEventListener("change", manejarCambio);
-        mediaMediana.addEventListener("change", manejarCambio);
+    /*Capturar para cerrar sesion*/
 
+    let iconCerrarSesion = document.querySelector(".icon-logout-login")
+    console.log(iconCerrarSesion)
+
+
+    iconCerrarSesion.addEventListener("click", ()=>{
+        
+        cerrarSesion()
+    })
+
+    /*Definicion de la f de cerrarSesion*/
+
+    let cerrarSesion = ()=>{
+         
+        console.log("ha intentado cerrar sesión")
+        localStorage.removeItem("usuarioSesion")
+        localStorage.setItem("volverSinSesion", "true");
+        
+        alert("!Lo esperamos de regreso pronto!😪")
+
+        window.location.href = "home.html"
     }
+
+
 
 } else if (page.includes("carritoDeCompras.html")){
 
