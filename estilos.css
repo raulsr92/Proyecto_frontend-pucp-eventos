@@ -117,8 +117,23 @@
     grid-area: header5;
     display: flex;
     justify-content: center;
-    column-gap: 40px;
+    column-gap: 10px;
     align-items: center;
+}
+
+.navbar-section5>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.navbar-section5>div>span{
+    font-size: 10px;
+    color: var(--variant-color-main);
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .icon-user-login{
@@ -1743,7 +1758,7 @@ select::placeholder{
 
     .header .navbarSinSesion{
         grid-template-areas: 
-            "header1 header1 header2 header2 header2 header2 header3 header3 header3 header4 header4 header4"
+            "header1 header1 header2 header2 header2 header3 header3 header3 header3 header4 header4 header4"
         ;
         row-gap: 15px;
     }

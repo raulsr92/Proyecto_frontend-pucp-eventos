@@ -767,9 +767,7 @@ if (page.includes("checkout.html")) {
     
     /*================Funcionalidad: Cambios en cabecera al iniciar sesión ================*/
         
-        //Dibujar la seccion 5 del header desde JS PARA PONER EL NOMBRE del que inició sesió
-
-        
+        //Crear función para actualizar el estado de la cabecera y lo que va a mostrar: seccion 4 o 5
 
         function actualizarEstadoNavbar() {
 
@@ -787,6 +785,19 @@ if (page.includes("checkout.html")) {
             console.log(volverSinSesion)
 
             if(usuarioEnSesion){
+
+                //Dibujar la seccion 5 del header desde JS PARA PONER EL NOMBRE del que inició sesión
+
+                let userSection = document.getElementById("userGreet")
+                console.log(userSection)
+
+                userSection.innerHTML=
+                    `
+                        <span>Bienvenido ${usuarioEnSesion[0].nombre}</span>
+                        <i class="fa-solid fa-circle-user icon-user-login"></i>
+                    `
+                    
+
                 sectionFourNavbar.style.display="none"
                 sectionFiveNavbar.style.display="flex"
                 navbarMain.classList.remove("navbarSinSesion")
@@ -809,7 +820,7 @@ if (page.includes("checkout.html")) {
 
         window.addEventListener("DOMContentLoaded", ()=>{
                 actualizarEstadoNavbar()
-            })
+        })
     /*================Funcionalidad: Cerrar Sesion ================*/
 
 
@@ -836,7 +847,6 @@ if (page.includes("checkout.html")) {
 
         window.location.href = "home.html"
     }
-
 
 
 } else if (page.includes("carritoDeCompras.html")){
@@ -1053,6 +1063,90 @@ if (page.includes("checkout.html")) {
         console.log(JSON.parse(localStorage.getItem("carritoInfo")))
 
         location.reload();
+    }
+
+
+        /*================Funcionalidad: Cambios en cabecera al iniciar sesión ================*/
+        
+        //Crear función para actualizar el estado de la cabecera y lo que va a mostrar: seccion 4 o 5
+
+        function actualizarEstadoNavbar() {
+
+            //Capturamos las secciones necesarias y el navbar
+            let sectionFourNavbar = document.querySelector(".navbar-section4")
+            console.log(sectionFourNavbar)
+            let sectionFiveNavbar = document.querySelector(".navbar-section5")
+            console.log(sectionFiveNavbar)
+            let navbarMain = document.getElementById("navBar-main")
+            console.log(navbarMain)
+
+            let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioSesion")) 
+            console.log(usuarioEnSesion)
+            const volverSinSesion = localStorage.getItem("volverSinSesion")
+            console.log(volverSinSesion)
+
+            if(usuarioEnSesion){
+
+                //Dibujar la seccion 5 del header desde JS PARA PONER EL NOMBRE del que inició sesión
+
+                let userSection = document.getElementById("userGreet")
+                console.log(userSection)
+
+                userSection.innerHTML=
+                    `
+                        <span>Bienvenido ${usuarioEnSesion[0].nombre}</span>
+                        <i class="fa-solid fa-circle-user icon-user-login"></i>
+                    `
+                    
+
+                sectionFourNavbar.style.display="none"
+                sectionFiveNavbar.style.display="flex"
+                navbarMain.classList.remove("navbarSinSesion")
+                navbarMain.classList.add("navbarEnSesion")
+            } else if(volverSinSesion === "true"){
+                sectionFourNavbar.style.display="flex"
+                sectionFiveNavbar.style.display="none"
+                navbarMain.classList.add("navbarSinSesion")
+                navbarMain.classList.remove("navbarEnSesion")
+                localStorage.removeItem("volverSinSesion")
+
+            } else{
+                sectionFourNavbar.style.display = "flex";
+                sectionFiveNavbar.style.display = "none";
+                navbarMain.classList.remove("navbarEnSesion");
+                navbarMain.classList.add("navbarSinSesion");
+            }
+        }
+            
+
+        window.addEventListener("DOMContentLoaded", ()=>{
+                actualizarEstadoNavbar()
+        })
+    /*================Funcionalidad: Cerrar Sesion ================*/
+
+
+    /*Capturar para cerrar sesion*/
+
+    let iconCerrarSesion = document.querySelector(".icon-logout-login")
+    console.log(iconCerrarSesion)
+
+
+    iconCerrarSesion.addEventListener("click", ()=>{
+        
+        cerrarSesion()
+    })
+
+    /*Definicion de la f de cerrarSesion*/
+
+    let cerrarSesion = ()=>{
+         
+        console.log("ha intentado cerrar sesión")
+        localStorage.removeItem("usuarioSesion")
+        localStorage.setItem("volverSinSesion", "true");
+        
+        alert("!Lo esperamos de regreso pronto!😪")
+
+        window.location.href = "home.html"
     }
 }
 

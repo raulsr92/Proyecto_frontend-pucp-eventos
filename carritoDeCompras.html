@@ -10,53 +10,66 @@
 </head>
 <body>
     <main id="grid-carrito" class="grid-container">
-        <header class="header item" >
-        <nav class="navbar-main-page">
-            <div class="navbar-section1">
-            <a href="home.html">
-                <img src="./img/logo1-sin-fondo.png" alt="logo-eventos" style="width: 200px;">
+    <header class="header item" >
+      <nav id="navBar-main" class="navbar-main-page navbarSinSesion navbarEnSesion">
+        <div class="navbar-section1">
+          <a href="home.html">
+            <img src="./img/logo1-sin-fondo.png" alt="logo-eventos" style="width: 200px;">
+          </a>
+        </div>
+
+        <div class="navbar-section2">
+          <input type="text" id="barra-filtro" placeholder="Encuentra eventos, lugares, organizadores, etc">
+          <i class="fa-solid fa-magnifying-glass icon-1-header"></i>
+          <i class="fa-solid fa-xmark icon-2-header"></i>
+        </div>
+
+        <div class="navbar-section3">
+            <a href="">
+              <i class="fa-solid fa-sack-dollar icon-3-header"></i>
+              Precio
             </a>
-            </div>
+            
+            <a href="">
+              <i class="fa-solid fa-layer-group icon-3-header"></i>
+              Categorías
+            </a>
 
-            <div class="navbar-section2">
-            <input type="text" id="barra-filtro" placeholder="Encuentra eventos, lugares, organizadores, etc">
-            <i class="fa-solid fa-magnifying-glass icon-1-header"></i>
-            <i class="fa-solid fa-xmark icon-2-header"></i>
-            </div>
+            <a href="">
+              <i class="fa-solid fa-location-dot icon-3-header"></i>
+              Ciudad
+            </a>
 
-            <div class="navbar-section3">
-                <a href="">
-                <i class="fa-solid fa-sack-dollar icon-3-header"></i>
-                Precio
-                </a>
-                
-                <a href="">
-                <i class="fa-solid fa-layer-group icon-3-header"></i>
-                Categorías
-                </a>
+            <a href="">
+              <i class="fa-solid fa-calendar-days icon-3-header"></i>
+              Fechas
+            </a>
+        </div>
 
-                <a href="">
-                <i class="fa-solid fa-location-dot icon-3-header"></i>
-                Ciudad
-                </a>
+        <div class="navbar-section4">
+            <a class="btn-main" href="login.html">
+                Iniciar Sesión
+            </a>
 
-                <a href="">
-                <i class="fa-solid fa-calendar-days icon-3-header"></i>
-                Fechas
-                </a>
-            </div>
-
-            <div class="navbar-section4">
-                <a class="btn-main" href="login.html">
-                    Iniciar Sesión
-                </a>
-
-                <a class="btn-secondary" href="registrar.html" >
-                    Registrarse
-                </a>
-            </div>
-        </nav>
-        </header>
+            <a class="btn-secondary" href="registrar.html" >
+                Registrarse
+            </a>
+        </div>
+ 
+        <div class="navbar-section5">
+          <a class="btn-especial" href="registrar.html" >
+                Crear evento
+          </a>
+          <div id="userGreet">
+            <!--
+            <span>Bienvenido José</span>
+            <i class="fa-solid fa-circle-user icon-user-login"></i>
+            -->
+          </div>
+          <i class="fa-solid fa-right-from-bracket icon-logout-login"></i>
+        </div>
+      </nav>
+    </header>
 
         <section class="menu item menu-carrito">
             <h4>
