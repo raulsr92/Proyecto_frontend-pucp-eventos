@@ -667,6 +667,7 @@ select::placeholder{
 #principal-checkout{
     background-color: var(--soft2);
     padding-top: 20px;
+    align-items: center;
 }
 
 /* **************************Checkout:Primera Sección de Principal > Sección de participantes*/
@@ -677,6 +678,7 @@ select::placeholder{
 }
 
 .participantes-section{
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -1659,6 +1661,19 @@ select::placeholder{
         padding: 0px 20px;
     }
 
+    .participantes-section{
+       width: 80%; 
+    }
+
+    .menu-checkout-up > div:nth-of-type(1) img {
+        width: 65px;
+    }
+
+    .menu-checkout-up{
+        justify-content: center;
+        padding: 22px 0px 15px 30px;
+    }
+
     /* Estilos de Footer */
 
     .footer a{
@@ -1780,6 +1795,46 @@ select::placeholder{
         column-gap: 35px;
     }
 
+    /*Checkout*/
+    .asistente-info--formulario{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+        column-gap: 20px;
+    }
+
+    .asistente-info--formulario > div:nth-of-type(7){
+        align-self: center;
+        justify-content: start;
+    }
+
+    .menu-checkout-down{
+        flex-direction: column;
+        row-gap: 15px;
+        padding: 15px 0px 15px 0px;
+    }
+
+    .menu-checkout-down > div {
+        font-size: 35px;
+    }
+    
+    .menu-checkout-down > p {
+        font-size: 16px;
+    }   
+
+    .menu-checkout-up > div:nth-of-type(1) img {
+        width: 85px;
+    }
+
+    .menu-checkout-up > div:nth-of-type(2) h3{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .menu-checkout-up > div:nth-of-type(2) >div>p {
+        font-size: 14px;
+    }
+
     /* Estilos de Footer */
 
     .footer{
@@ -1874,7 +1929,34 @@ select::placeholder{
 
 /*Pantallas super grandes*/
 
+@media screen and ( min-width: 1200px){
+
+    /*Checkout*/
+    .participantes-section {
+        width: 60%;
+    }
+
+    #menu-checkout{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .menu-checkout-up > div:nth-of-type(1) img {
+        width: 125px;
+    }
+
+    .menu-checkout-down{
+        padding: 5px 60px;
+    }
+
+}
+
+
+/*Pantallas super grandes*/
+
 @media screen and ( min-width: 1550px){
+
+
 
 /* =========================== Página Home ==================================== */
 
@@ -1908,5 +1990,15 @@ select::placeholder{
 
     .principal--login{
         padding: 0 200px;
+    }
+
+    /*================== Checkout*/
+
+    .menu-checkout-up{
+        justify-content: start;
+    }
+
+    .menu-checkout-up > div:nth-of-type(1) img {
+        width: 150px;
     }
 }

@@ -292,7 +292,6 @@ if (page.includes("checkout.html")) {
     })
 
 
-
 } else if (page.includes("registrar.html")) {
 
     // Arrays de objetos que representan un país
