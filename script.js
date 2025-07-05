@@ -137,17 +137,23 @@ if (page.includes("checkout.html")) {
 
             const userSelected = usuariosActuales.filter((user)=>user.dni === dniAEvaluar)
             console.log(userSelected)
+
+            if (userSelected.length>0) {
+                //Autocompletar
+
+                const cajaNombres = document.getElementById("nombre")
+                console.log(userSelected[0].nombre)
+                cajaNombres.value = userSelected[0].nombre
+
+                const cajaApellidos = document.getElementById("apellidos")
+                console.log(cajaApellidos)
+
+                cajaApellidos.value = userSelected[0].apellidos
+            }else{
+                alert("Usuario no existe")
+            }
             
-            //Autocompletar
 
-            const cajaNombres = document.getElementById("nombre")
-            console.log(userSelected[0].nombre)
-            cajaNombres.value = userSelected[0].nombre
-
-            const cajaApellidos = document.getElementById("apellidos")
-            console.log(cajaApellidos)
-
-            cajaApellidos.value = userSelected[0].apellidos
         }
 
         lupaIcon.addEventListener("click", ()=>{
@@ -409,7 +415,7 @@ if (page.includes("checkout.html")) {
 
         let info1Version4 = document.querySelector(".asistente-info-1-alternob")
         console.log(info1Version4)
-        
+
         let iconflecha3 = document.querySelector(".icon-participante-3")
         console.log(iconflecha3)
 
