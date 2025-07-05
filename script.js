@@ -141,7 +141,7 @@ if (page.includes("checkout.html")) {
             //Autocompletar
 
             const cajaNombres = document.getElementById("nombre")
-            console.log(userSelected.nombre)
+            console.log(userSelected[0].nombre)
             cajaNombres.value = userSelected[0].nombre
 
             const cajaApellidos = document.getElementById("apellidos")
@@ -165,84 +165,129 @@ if (page.includes("checkout.html")) {
     let ventanInfoAsistente2 = document.querySelector(".asistente-info-2")
     console.log(ventanInfoAsistente2)
 
+    let asistente = null
+
+
     function dibujarInfo1Activa() {
         ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
             `
-                <div class="asistente-info-1">
+                <div class="asistente-info-1a">
                     <div>
                         <i class="fa-solid fa-circle-user"></i>
                         <h4>Asistente #1</h4>
                     </div> 
-                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-up icon-participante-1"></i>
                 </div> 
             `
         )
     }
-
-    
 
     function dibujarInfo1Oculta() {
         ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
             `
-                <div class="asistente-info-1">
+                <div class="asistente-info-1b">
                     <div>
                         <i class="fa-solid fa-circle-user"></i>
                         <h4>Asistente #1</h4>
                     </div> 
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down icon-participante-2"></i>
                 </div> 
             `
         )
     }
+ 
+    function dibujarInfo1AlternaActiva(dniAsistente) {
 
-    
-    
-    function dibujarInfo1AlternaActiva() {
-        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+        if(asistente == null){
+            ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+                `
+                    <div class="asistente-info-1-alternoa">
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <h4>-</h4>
+                        </div> 
+                            <i class="fa-solid fa-chevron-up icon-participante-3"></i>
+                    </div>
+                `) 
+        } else{
 
-        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
-        `
-            <div class="asistente-info-1-alterno">
-                <div>
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
-                </div> 
-                    <i class="fa-solid fa-chevron-up"></i>
-            </div>
-        `)
+            asistente = objParticipantes.find((participante)=> participante.dni == dniAsistente)
+            console.log(asistente)
+
+            ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+            `
+                <div class="asistente-info-1-alternoa">
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h4>${asistente.nombre} ${asistente.apellidos}</h4>
+                    </div> 
+                        <i class="fa-solid fa-chevron-up icon-participante-3"></i>
+                </div>
+            `)  
+        }
+
     }
 
-    function dibujarInfo1AlternaOculta() {
-        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+    function dibujarInfo1AlternaOculta(dniAsistente) {
+        if(asistente == null){
+            ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+                `
+                    <div class="asistente-info-1-alternob">
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <h4>-</h4>
+                        </div> 
+                            <i class="fa-solid fa-chevron-down icon-participante-4"></i>
+                    </div>
+                `) 
+        } else{
 
-        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
-        `
-            <div class="asistente-info-1-alterno">
-                <div>
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
-                </div> 
-                    <i class="fa-solid fa-chevron-down"></i>
-            </div>
-        `)
+            asistente = objParticipantes.find((participante)=> participante.dni == dniAsistente)
+            console.log(asistente)
+
+            ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+            `
+                <div class="asistente-info-1-alternob">
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h4>${asistente.nombre} ${asistente.apellidos}</h4>
+                    </div> 
+                        <i class="fa-solid fa-chevron-down icon-participante-4"></i>
+                </div>
+            `)  
+        }
+
     }
     
     dibujarInfo1Activa()
     dibujarInfo1Oculta()
-    dibujarInfo1AlternaActiva()
-    dibujarInfo1AlternaOculta()
+    //dibujarInfo1AlternaActiva()
+    //dibujarInfo1AlternaOculta()
+
+    console.log(objParticipantes)
+    console.log(JSON.parse(localStorage.getItem("participantes")))
+
+    //Capturamos todas las variantes de asistente-info-1 
+
+    let info1Version1 = document.querySelector(".asistente-info-1a")
+        console.log(info1Version1)
+
+    let info1Version2 = document.querySelector(".asistente-info-1b")
+        console.log(info1Version2)
 
     ventanInfoAsistente2.style.display="flex"
+    info1Version1.style.display="flex"
+    info1Version2.style.display="flex"
+    //info1Version3.style.display="flex"
+    //info1Version4.style.display="flex"
 
-    /*Imprimir el DIV de clase asistente-info-1 desde JS para que al dar click en guardar asistente, se imprima su nombre*/
 
-    
+    if(objParticipantes.length==0){
+        //info1Version3.style.display="none"
+        //info1Version4.style.display="none" 
+        info1Version2.style.display="none"
+    }
 
-    //Capturamos la ventana info 1 para luego poder ocultarla
-
-    let ventanInfoAsistente1 = document.querySelector(".asistente-info-1")
-    ventanInfoAsistente1.style.display="flex"
-    
 
     btnGuardarAsistente.addEventListener("click", (e)=>{
 
@@ -269,47 +314,133 @@ if (page.includes("checkout.html")) {
 
         //Validar que asistente ya no esté con alguna entrada asignada
 
-        if(objParticipantes.find((participante)=> participante.dni == docAsistente)){
+        if((objParticipantes.find((participante)=> participante.dni == docAsistente))){
             alert("El asistente ya ha sido asignado a una entrada, no se puede asignar nuevamente")
+
+            return
+        } else{
+
+            console.log(objParticipantes)
+
+            objParticipantes.push({
+                    id: objParticipantes.length+1,
+                    nombre: nombreAsistente,
+                    apellidos: apellidoAsistente,
+                    dni: docAsistente,
+                    pais: paisAsistente,
+            })
+
+            console.log(objParticipantes)
+
+            localStorage.setItem("participantes",JSON.stringify(objParticipantes))  
+
+            
+            /*Traemos al asistente en una variable para poder capturar su nombre*/
+
+            asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+            console.log(asistente)
+
+            //Volver a dibujar las secciones de info 1
+
+            info1Version1.style.display="flex"
+            info1Version2.style.display="flex"
+            // info1Version3.style.display="flex"
+            //info1Version4.style.display="flex"
+
+                dibujarInfo1AlternaActiva(docAsistente)
+                dibujarInfo1AlternaOculta(docAsistente)
+
+                let info1Version3 = document.querySelector(".asistente-info-1-alternoa")
+                console.log(info1Version3)
+
+                let info1Version4 = document.querySelector(".asistente-info-1-alternob")
+                console.log(info1Version4)
+
+                //Ocultar secciones
+
+                info1Version1.style.display="none"
+                info1Version2.style.display="none"
+                info1Version3.style.display="none"
+                info1Version4.style.display="flex"
+
         }
 
-        console.log(objParticipantes)
 
-        objParticipantes.push({
-                id: objParticipantes.length+1,
-                nombre: nombreAsistente,
-                apellidos: apellidoAsistente,
-                dni: docAsistente,
-                pais: paisAsistente,
-        })
-
-        console.log(objParticipantes)
-
-        localStorage.setItem("participantes",JSON.stringify(objParticipantes))  
-
-        //Ocultar la seccion de info - asistente - 1 porque ya se asignó la entrada
-        ventanInfoAsistente2.style.display="none"
-
-        //Dibujar la sección de info asistente 1 alterno porque ya se asignó la entrada
-
-        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
-
-        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
-        `
-            <div class="asistente-info-1-alterno">
-                <div>
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
-                </div> 
-                    <i class="fa-solid fa-chevron-down"></i>
-            </div>
-        `
-    )
-
-        ventanInfoAsistente1.style.display="none"
+        trabarConBotones3and4()
     } )
 
+    //capturar iconos para desplazar la info del asistente
+
+    let iconflecha1 = document.querySelector(".icon-participante-1")
+    console.log(iconflecha1)
+    
+    let iconflecha2 = document.querySelector(".icon-participante-2")
+    console.log(iconflecha2)
   
+    //eventos
+
+    
+    iconflecha1.addEventListener("click", ()=>{
+
+        info1Version1.style.display="none"
+        info1Version2.style.display="flex"
+        //info1Version3.style.display="none"
+        //info1Version4.style.display="none"
+        
+        ventanInfoAsistente2.style.display="none"
+    })
+
+    iconflecha2.addEventListener("click", ()=>{
+
+        info1Version1.style.display="flex"
+        info1Version2.style.display="none"
+        //info1Version3.style.display="none"
+        //info1Version4.style.display="none"
+        
+        ventanInfoAsistente2.style.display="flex"
+    })
+
+    function trabarConBotones3and4() {
+            console.log(objParticipantes.length>0)
+
+    if (objParticipantes.length>0) {
+        let info1Version3 = document.querySelector(".asistente-info-1-alternoa")
+        console.log(info1Version3)
+
+        let info1Version4 = document.querySelector(".asistente-info-1-alternob")
+        console.log(info1Version4)
+        
+        let iconflecha3 = document.querySelector(".icon-participante-3")
+        console.log(iconflecha3)
+
+        let iconflecha4 = document.querySelector(".icon-participante-4")
+        console.log(iconflecha4)
+
+        iconflecha3.addEventListener("click", ()=>{
+
+        info1Version1.style.display="none"
+        info1Version2.style.display="none"
+        info1Version3.style.display="none"
+        info1Version4.style.display="flex"
+        
+        ventanInfoAsistente2.style.display="none"
+        })
+
+        iconflecha4.addEventListener("click", ()=>{
+
+            info1Version1.style.display="none"
+            info1Version2.style.display="none"
+            info1Version3.style.display="flex"
+            info1Version4.style.display="none"
+        
+        ventanInfoAsistente2.style.display="flex"
+        })
+    }
+    }
+
+
+
+
 
 
     /*================Funcionalidad: Imprimir ventana de total a pagar en pantallas de móviles y tablets ================*/
