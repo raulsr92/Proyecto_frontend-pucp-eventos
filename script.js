@@ -292,6 +292,17 @@ if (page.includes("checkout.html")) {
         //info1Version3.style.display="none"
         //info1Version4.style.display="none" 
         info1Version2.style.display="none"
+    } else{
+        info1Version1.style.display="none"
+        info1Version2.style.display="none"
+
+        asistente = objParticipantes[0]
+
+        dibujarInfo1AlternaActiva(asistente.dni)
+        dibujarInfo1AlternaOculta(asistente.dni)
+        console.log("estoy en el else")
+        
+        trabajarConBotones3and4()
     }
 
 
@@ -368,11 +379,11 @@ if (page.includes("checkout.html")) {
                 info1Version2.style.display="none"
                 info1Version3.style.display="none"
                 info1Version4.style.display="flex"
-
+                ventanInfoAsistente2.style.display="none"
         }
 
 
-        trabarConBotones3and4()
+        trabajarConBotones3and4()
     } )
 
     //capturar iconos para desplazar la info del asistente
@@ -406,7 +417,7 @@ if (page.includes("checkout.html")) {
         ventanInfoAsistente2.style.display="flex"
     })
 
-    function trabarConBotones3and4() {
+    function trabajarConBotones3and4() {
             console.log(objParticipantes.length>0)
 
     if (objParticipantes.length>0) {
@@ -421,6 +432,11 @@ if (page.includes("checkout.html")) {
 
         let iconflecha4 = document.querySelector(".icon-participante-4")
         console.log(iconflecha4)
+
+
+        info1Version3.style.display="flex"
+        info1Version4.style.display="flex"
+        info1Version3.style.display="none"
 
         iconflecha3.addEventListener("click", ()=>{
 
@@ -443,6 +459,12 @@ if (page.includes("checkout.html")) {
         })
     }
     }
+
+    //Eliminat objeto de participantes del local storage al reinicia la página
+
+    window.addEventListener("load", () => {
+        localStorage.removeItem("participantes");
+    });
 
 
 
