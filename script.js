@@ -105,6 +105,10 @@ console.log(objUsers)
 let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioSesion")) || [];
 console.log(usuarioEnSesion)
 
+let objParticipantes = JSON.parse(localStorage.getItem("participantes")) || [];
+let objDetalleCompra = JSON.parse(localStorage.getItem("compras")) || [];
+
+
 const page = window.location.pathname;
 
 if (page.includes("checkout.html")) {
@@ -125,8 +129,13 @@ if (page.includes("checkout.html")) {
         console.log(lupaIcon)
 
         function autocompletarUsuario(dniAEvaluar) {
+
             console.log("Click en lupa")
-            const userSelected = objUsuarios.filter((user)=>user.dni === dniAEvaluar)
+            console.log("Usuarios registrados:")
+            let usuariosActuales = JSON.parse(localStorage.getItem("users"))
+            console.log(usuariosActuales)
+
+            const userSelected = usuariosActuales.filter((user)=>user.dni === dniAEvaluar)
             console.log(userSelected)
             
             //Autocompletar
@@ -144,6 +153,164 @@ if (page.includes("checkout.html")) {
         lupaIcon.addEventListener("click", ()=>{
             autocompletarUsuario(dniUser.value); // Llamamos la función con ese valor
         })
+
+    /* ===================== Funcionalidad de Ventana Guardar */    
+
+    let btnGuardarAsistente = document.getElementById("btn-guardar-participante")
+    console.log(btnGuardarAsistente)
+
+    let ventanaAsistenteContainer = document.getElementById("asistente-info")
+    console.log(ventanaAsistenteContainer)
+
+    let ventanInfoAsistente2 = document.querySelector(".asistente-info-2")
+    console.log(ventanInfoAsistente2)
+
+    function dibujarInfo1Activa() {
+        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+            `
+                <div class="asistente-info-1">
+                    <div>
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h4>Asistente #1</h4>
+                    </div> 
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div> 
+            `
+        )
+    }
+
+    
+
+    function dibujarInfo1Oculta() {
+        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+            `
+                <div class="asistente-info-1">
+                    <div>
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h4>Asistente #1</h4>
+                    </div> 
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div> 
+            `
+        )
+    }
+
+    
+    
+    function dibujarInfo1AlternaActiva() {
+        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+
+        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+        `
+            <div class="asistente-info-1-alterno">
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
+                </div> 
+                    <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        `)
+    }
+
+    function dibujarInfo1AlternaOculta() {
+        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+
+        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+        `
+            <div class="asistente-info-1-alterno">
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
+                </div> 
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        `)
+    }
+    
+    dibujarInfo1Activa()
+    dibujarInfo1Oculta()
+    dibujarInfo1AlternaActiva()
+    dibujarInfo1AlternaOculta()
+
+    ventanInfoAsistente2.style.display="flex"
+
+    /*Imprimir el DIV de clase asistente-info-1 desde JS para que al dar click en guardar asistente, se imprima su nombre*/
+
+    
+
+    //Capturamos la ventana info 1 para luego poder ocultarla
+
+    let ventanInfoAsistente1 = document.querySelector(".asistente-info-1")
+    ventanInfoAsistente1.style.display="flex"
+    
+
+    btnGuardarAsistente.addEventListener("click", (e)=>{
+
+        e.preventDefault()
+        console.log("Intentando guardar asistente")
+
+        let nombreAsistente = document.getElementById("nombre").value.trim();
+            console.log(nombreAsistente)
+        let apellidoAsistente = document.getElementById("apellidos").value.trim();
+            console.log(apellidoAsistente)
+        let docAsistente = document.getElementById("numero-doc").value.trim();
+              console.log(docAsistente)
+        let paisAsistente = document.getElementById("pais").value.trim();
+            console.log(paisAsistente)
+
+
+        //Validación de campos
+
+         if (!nombreAsistente || !apellidoAsistente || !docAsistente || !paisAsistente) {
+
+            alert("Completa todos los campos obligatorios.");
+            return;
+        }
+
+        //Validar que asistente ya no esté con alguna entrada asignada
+
+        if(objParticipantes.find((participante)=> participante.dni == docAsistente)){
+            alert("El asistente ya ha sido asignado a una entrada, no se puede asignar nuevamente")
+        }
+
+        console.log(objParticipantes)
+
+        objParticipantes.push({
+                id: objParticipantes.length+1,
+                nombre: nombreAsistente,
+                apellidos: apellidoAsistente,
+                dni: docAsistente,
+                pais: paisAsistente,
+        })
+
+        console.log(objParticipantes)
+
+        localStorage.setItem("participantes",JSON.stringify(objParticipantes))  
+
+        //Ocultar la seccion de info - asistente - 1 porque ya se asignó la entrada
+        ventanInfoAsistente2.style.display="none"
+
+        //Dibujar la sección de info asistente 1 alterno porque ya se asignó la entrada
+
+        let asistente = objParticipantes.find((participante)=> participante.dni == docAsistente)
+
+        ventanaAsistenteContainer.insertAdjacentHTML("afterbegin",
+        `
+            <div class="asistente-info-1-alterno">
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4>${asistente.nombre} ${asistente.apellidos}</h4>
+                </div> 
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        `
+    )
+
+        ventanInfoAsistente1.style.display="none"
+    } )
+
+  
+
 
     /*================Funcionalidad: Imprimir ventana de total a pagar en pantallas de móviles y tablets ================*/
 

@@ -713,7 +713,20 @@ select::placeholder{
     align-items: center;
 }
 
+.asistente-info-1-alterno{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .asistente-info-1>div{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    color: var(--variant-color-secondary);
+}
+
+.asistente-info-1-alterno>div{
     display: flex;
     align-items: center;
     column-gap: 7px;
@@ -724,7 +737,22 @@ select::placeholder{
     font-size: 18px;
 }
 
+.asistente-info-1-alterno>div>i{
+    font-size: 18px;
+    color: var(--variant-color-main);
+}
+
+.asistente-info-1-alterno>div>h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
 .asistente-info-1>i{
+    font-size: 14px;
+}
+
+.asistente-info-1-alterno>i{
     font-size: 14px;
 }
 
@@ -1674,6 +1702,11 @@ select::placeholder{
         padding: 22px 0px 15px 30px;
     }
 
+
+    #resumen-compra-short, #resumen-compra-large{
+        width: 75%;
+    }
+
     /* Estilos de Footer */
 
     .footer a{
@@ -1833,6 +1866,10 @@ select::placeholder{
 
     .menu-checkout-up > div:nth-of-type(2) >div>p {
         font-size: 14px;
+    }
+
+    #resumen-compra-short, #resumen-compra-large{
+        width: 60%;
     }
 
     /* Estilos de Footer */
